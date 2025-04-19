@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>[REDACTED]</title>
+    <script src="https://kit.fontawesome.com/0ce6fb0549.js" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --blood: #3a0000;
+            --flesh: #ffe5e5;
+            --black: #0a0a0a;
+            --ease: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--black);
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .blood-portal {
+            color: var(--flesh);
+            font-size: 4rem;
+            text-decoration: none;
+            position: relative;
+            transition: all 0.3s var(--ease);
+            padding: 1rem;
+        }
+
+        .blood-portal::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0;
+            height: 0;
+            background: transparent;
+            border: 2px solid var(--blood);
+            border-radius: 50%;
+            opacity: 0;
+            transition: all 0.3s var(--ease);
+        }
+
+        .blood-portal:hover {
+            color: var(--blood);
+            transform: translateY(-5px);
+        }
+
+        .blood-portal:hover::before {
+            width: 120%;
+            height: 120%;
+            opacity: 0.5;
+            animation: blood-pulse 1.5s infinite;
+        }
+
+        @keyframes blood-pulse {
+            0% {
+                transform: translate(-50%, -50%) scale(0.9);
+                opacity: 0.5;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.1);
+                opacity: 0.3;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(0.9);
+                opacity: 0.5;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .blood-portal {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="https://mastodon.art/@traplol" 
+       class="blood-portal"
+       target="_blank"
+       rel="me noopener noreferrer">
+        <i class="fab fa-mastodon"></i>
+    </a>
+</body>
+</html>

@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /art/manifesto/*
+Disallow: /404.html
+Disallow: /public/*
+Disallow: /art/*

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>PATHOLOGY NOT FOUND</title>
+    <script src="https://kit.fontawesome.com/0ce6fb0549.js" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --blood: #3a0000;
+            --flesh: #ffe5e5;
+            --black: #0a0a0a;
+            --ease: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--black);
+            color: var(--flesh);
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'Crimson Text', serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .error-code {
+            font-size: clamp(3rem, 10vw, 6rem);
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .error-code::after {
+            content: '404';
+            position: absolute;
+            left: -2px;
+            text-shadow: 2px 0 var(--blood);
+            clip-path: inset(0 90% 0 0);
+            animation: glitch 2s infinite;
+        }
+
+        @keyframes glitch {
+            0% { clip-path: inset(0 90% 0 0); }
+            20% { clip-path: inset(0 60% 0 10%); }
+            100% { clip-path: inset(0 0 0 90%); }
+        }
+
+        .error-message {
+            font-family: 'Courier Prime', monospace;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.7;
+        }
+
+        .autopsy-link {
+            color: var(--flesh);
+            text-decoration: none;
+            border: 1px solid var(--blood);
+            padding: 1rem 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s var(--ease);
+        }
+
+        .autopsy-link:hover {
+            background: rgba(58,0,0,0.1);
+            letter-spacing: 0.1em;
+        }
+
+        .autopsy-link::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, 
+                transparent 45%,
+                rgba(255,255,255,0.1) 50%,
+                transparent 55%
+            );
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .autopsy-link:hover::after {
+            opacity: 0.3;
+        }
+
+        .morgue-vector {
+            margin-top: 2rem;
+            font-size: 1.5rem;
+            color: var(--blood);
+        }
+    </style>
+</head>
+<body>
+    <h1 class="error-code">404</h1>
+    <p class="error-message">
+        ERROR: Cognitive pathway corrupted<br>
+        Specimen unavailable for autopsy
+    </p>
+    <a href="/" class="autopsy-link">
+        INITIATE SYSTEMIC PURGE
+    </a>
+    <div class="morgue-vector">
+        <i class="fas fa-skull-crossbones"></i>
+    </div>
+
+    <script>
+        // Random micro-glitch effect
+        const errorCode = document.querySelector('.error-code');
+
+        setInterval(() => {
+            errorCode.style.transform = `translateX(${Math.random() * 10 - 5}px)`;
+            errorCode.style.textShadow = `
+                ${Math.random() * 5 - 2.5}px 0 var(--blood),
+                0 ${Math.random() * 5 - 2.5}px var(--blood)
+            `;
+        }, 100);
+    </script>
+</body>
+</html>
