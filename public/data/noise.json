@@ -1,36 +1,37 @@
 [
     {
       "noiseId": "",
-      "series": "ballet",
+      "name": "Carnival Of Flesh",
+      "series": "perfectionSelfDestruction",
       "edition": "one",
       "validation": {
         "sha256": "",
         "razorSignature": {
-          "bloodDate": "2024-03-20",
+          "bloodDate": "[DATE]",
           "vaultId": "ARTRAP-BALLET-ONE"
         },
         "qrCode": {
-          "url": "https://trap.lol/noise/ballet/one/",
-          "ipfs": ""
+          "url": "https://trap.lol/noise/perfectionSelfDestruction/one/",
+          "ipfs": "[IPFS]"
         }
       },
       "process": {
         "sketches": [
           {
-            "sketchId": "",
-            "path": "/noise/ballet/one/sketch/image.webp",
-            "createdAt": ""
+            "sketchId": "[SKETCHID]",
+            "path": "/noise/perfectionSelfDestruction/one/sketch/image.webp",
+            "createdAt": "[LOCATION]"
           }
         ],
         "inspirationPhoto": {
-          "exifHash": "",
-          "emotionalIntent": "Isolated desperation in urban decay"
+          "exifHash": "[HASH]",
+          "emotionalIntent": "[EMOTIONAL INTENT]"
         }
       },
       "poem": {
         "title": "[POEM TITLE]",
         "text": "[POEM]",
-        "audioPath": "/noise/ballet/one/poem.flac"
+        "audioPath": "/noise/perfectionSelfDestruction/one/poem.flac"
       },
       "certificate": {
         "engravingText": "[ENGRAVED TEXT]",

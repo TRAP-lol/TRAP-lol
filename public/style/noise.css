@@ -13,9 +13,9 @@ body {
     overflow-x: hidden;
 }
 
-.blood-trail {
-    padding: 1rem;
-    border-bottom: 1px solid var(--blood);
+#noise-name {
+    text-align: center;
+    margin: 2rem 0;
 }
 
 .hemorrhage-link {

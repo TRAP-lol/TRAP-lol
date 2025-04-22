@@ -19,11 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-
     function renderArtifact() {
         const mainImg = document.querySelector('.main-artifact');
         mainImg.src = currentArtwork.process.sketches[0].path;
         mainImg.dataset.fullRes = currentArtwork.process.highResPath;
+
+        document.getElementById('noise-name').textContent = currentArtwork.name;
 
         // Validation
         document.getElementById('shaHash').textContent = currentArtwork.validation.sha256;
@@ -106,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             document.title = `NOISE :: ${currentArtwork.poem.title}`;
         } catch (error) {
-            console.error('Artifact retrieval failed:', error);
+            console.error('Retrieval failed:', error);
             // Only redirect if artifact not found
             if (error.message.includes('not found')) {
                 window.location.href = '/';
