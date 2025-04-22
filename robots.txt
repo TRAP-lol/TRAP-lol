@@ -1,5 +1,9 @@
 User-agent: *
-Disallow: /art/manifesto/*
+Disallow: /noise/*
 Disallow: /404.html
 Disallow: /public/*
-Disallow: /art/*
+Disallow: /.gitinore
+Disallow: /.git/*
+Disallow: /.git
+Disallow: /README.md
+Disallow: /_config.yml

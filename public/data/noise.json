@@ -1,0 +1,43 @@
+[
+    {
+      "noiseId": "",
+      "series": "ballet",
+      "edition": "one",
+      "validation": {
+        "sha256": "",
+        "razorSignature": {
+          "bloodDate": "2024-03-20",
+          "vaultId": "ARTRAP-BALLET-ONE"
+        },
+        "qrCode": {
+          "url": "https://trap.lol/noise/ballet/one/",
+          "ipfs": ""
+        }
+      },
+      "process": {
+        "sketches": [
+          {
+            "sketchId": "",
+            "path": "/noise/ballet/one/sketch/image.webp",
+            "createdAt": ""
+          }
+        ],
+        "inspirationPhoto": {
+          "exifHash": "",
+          "emotionalIntent": "Isolated desperation in urban decay"
+        }
+      },
+      "poem": {
+        "title": "[POEM TITLE]",
+        "text": "[POEM]",
+        "audioPath": "/noise/ballet/one/poem.flac"
+      },
+      "certificate": {
+        "engravingText": "[ENGRAVED TEXT]",
+        "materialsUsed": [
+            "Paper",
+            "Oil"
+        ]
+      }
+    }
+  ]

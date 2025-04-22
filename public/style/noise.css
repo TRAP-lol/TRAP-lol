@@ -1,0 +1,168 @@
+:root {
+    --blood: #3a0000;
+    --black: #0a0a0a;
+    --flesh: #ffe5e5;
+    --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    background: var(--black);
+    color: var(--flesh);
+    font-family: 'Crimson Text', serif;
+    line-height: 1.4;
+    overflow-x: hidden;
+}
+
+.blood-trail {
+    padding: 1rem;
+    border-bottom: 1px solid var(--blood);
+}
+
+.hemorrhage-link {
+    color: var(--flesh);
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.artifact-container {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.cognitive-display {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.artifact-viewer {
+    position: relative;
+    border: 3px solid var(--blood);
+}
+
+.main-artifact {
+    width: 100%;
+    display: block;
+    transition: filter 0.3s var(--ease);
+}
+
+.blood-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.validation-panel {
+    border: 1px solid var(--blood);
+    padding: 1rem;
+}
+
+.blood-qr {
+    width: 100%;
+    aspect-ratio: 1;
+    background: rgba(58,0,0,0.3);
+}
+
+.hash-display {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.9rem;
+    word-break: break-all;
+    margin-top: 1rem;
+}
+
+.autopsy-report {
+    border-top: 2px solid var(--blood);
+    padding: 2rem 0;
+}
+
+.sketches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.sketch-card {
+    border: 1px solid rgba(58,0,0,0.5);
+    transition: transform 0.3s var(--ease);
+}
+
+.sketch-card:hover {
+    transform: translateY(-5px);
+}
+
+.death-certificate {
+    border: 2px solid var(--blood);
+    padding: 2rem;
+    margin: 3rem 0;
+    position: relative;
+}
+
+.death-certificate::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, 
+        transparent 45%,
+        rgba(58,0,0,0.1) 50%,
+        transparent 55%
+    );
+    pointer-events: none;
+}
+
+.engraved-title {
+    font-family: 'Courier Prime', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--blood);
+    border-bottom: 1px solid var(--blood);
+    padding-bottom: 0.5rem;
+}
+
+.blood-list {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+.blood-list li::before {
+    content: '◉';
+    color: var(--blood);
+    margin-right: 0.5rem;
+}
+
+.hemorrhage-poetry {
+    border-top: 2px solid var(--blood);
+    padding: 2rem 0;
+}
+
+.poem-text {
+    white-space: pre-wrap;
+    font-family: 'Courier Prime', monospace;
+    line-height: 1.6;
+    margin: 1rem 0;
+}
+
+.blood-audio {
+    width: 100%;
+    margin-top: 1rem;
+    filter: grayscale(1);
+}
+
+.noise-footer {
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 2px solid var(--blood);
+}
+
+@media (max-width: 768px) {
+    .cognitive-display {
+        grid-template-columns: 1fr;
+    }
+
+    .validation-panel {
+        order: -1;
+    }
+}

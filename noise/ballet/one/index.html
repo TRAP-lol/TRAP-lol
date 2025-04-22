@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOISE EDITION</title>
+    <link rel="stylesheet" href="/public/style/noise.css">
+    <script src="https://kit.fontawesome.com/29c25c094f.js"></script>
+<!-- Use this EXACT script tag -->
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js" defer></script>
+    <script src="/public/script/noise.js" defer></script>
+</head>
+<body>
+    <!-- <nav class="blood-trail">
+        <a href="/noise/" class="hemorrhage-link">
+            <i class="fas fa-skull-crossbones"></i>
+            RETURN TO NOISE
+        </a>
+    </nav> -->
+
+    <main class="artifact-container" id="blood-interface">
+        <!-- Visual Noise -->
+        <section class="cognitive-display">
+            <div class="artifact-viewer">
+                <img src="" class="main-artifact" alt="Blood manifestation" data-full-res="">
+                <canvas class="blood-overlay"></canvas>
+            </div>
+            <div class="validation-panel">
+                <div class="blood-qr" id="qrContainer"></div>
+                <div class="hash-display">
+                    SHA256: <span id="shaHash"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Documentation -->
+        <section class="autopsy-report">
+            <div class="process-ribbon">
+                <h2 class="section-title">IDEA BEFORE LIFE</h2>
+                <div class="sketches-grid" id="sketchesContainer"></div>
+
+                <div class="inspiration-forensics">
+                    <h3>INSPIRATION</h3>
+                    <div class="exif-data" id="inspirationDetails"></div>
+                    <img src="" class="inspiration-photo" alt="Inspiration corpse">
+                </div>
+            </div>
+
+            <!-- Certificate -->
+            <div class="death-certificate">
+                <h2 class="engraved-title">VALIDATION</h2>
+                <div class="certificate-body">
+                    <p class="engraving" id="engravingText"></p>
+                    <div class="materials">
+                        <h4>MATERIALS USED:</h4>
+                        <ul class="blood-list" id="materialsList"></ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Poetry -->
+        <section class="hemorrhage-poetry">
+            <div class="poem-container">
+                <h2 class="poem-title" id="poemTitle"></h2>
+                <pre class="poem-text" id="poemText"></pre>
+                <audio controls class="blood-audio" id="poemAudio">
+                    <source src="" type="audio/flac">
+                    AUDIO UNAVAILABLE - TERMINAL CORRUPTION
+                </audio>
+            </div>
+        </section>
+    </main>
+
+    <footer class="noise-footer">
+        <div class="validation-ritual">
+            <span class="vault-id" id="vaultId"></span>
+            <span class="blood-date" id="bloodDate"></span>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,100 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://trap.lol/public/data/schemas/noise-laws.json",
+    "title": "[TITLE]",
+    "description": "[DESCRIPTION]",
+    "type": "array",
+    "items": {
+      "type": "object",
+      "required": ["noiseId", "series", "edition", "validation", "process", "poem", "certificate"],
+      "properties": {
+        "noiseId": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+        },
+        "series": {
+          "type": "string",
+          "pattern": "^[\\w\\-]+$",
+          "maxLength": 32
+        },
+        "edition": {
+          "type": "string",
+          "pattern": "^[\\w\\-]+$",
+          "maxLength": 16
+        },
+        "validation": {
+          "type": "object",
+          "required": ["sha256", "razorSignature", "qrCode"],
+          "properties": {
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "razorSignature": {
+              "type": "object",
+              "required": ["bloodDate", "vaultId"],
+              "properties": {
+                "bloodDate": {"type": "string", "format": "date"},
+                "vaultId": {"type": "string", "pattern": "^VAULT-[A-Z0-9]{4}$"}
+              }
+            },
+            "qrCode": {
+              "type": "object",
+              "required": ["url", "ipfs"],
+              "properties": {
+                "url": {"type": "string", "format": "uri"},
+                "ipfs": {"type": "string", "pattern": "^Qm[A-Za-z0-9]{44}$"}
+              }
+            }
+          }
+        },
+        "process": {
+          "type": "object",
+          "required": ["sketches", "inspirationPhoto"],
+          "properties": {
+            "sketches": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["sketchId", "path"],
+                "properties": {
+                  "sketchId": {"type": "string", "format": "uuid"},
+                  "path": {"type": "string", "pattern": "\\.(webp|jpg)$"},
+                  "createdAt": {"type": "string", "format": "date-time"}
+                }
+              }
+            },
+            "inspirationPhoto": {
+              "type": "object",
+              "required": ["exifHash"],
+              "properties": {
+                "exifHash": {"type": "string"},
+                "emotionalIntent": {"type": "string"}
+              }
+            }
+          }
+        },
+        "poem": {
+          "type": "object",
+          "required": ["title", "text"],
+          "properties": {
+            "title": {"type": "string", "maxLength": 48},
+            "text": {"type": "string", "minLength": 140},
+            "audioPath": {"type": "string"}
+          }
+        },
+        "certificate": {
+          "type": "object",
+          "required": ["engravingText"],
+          "properties": {
+            "engravingText": {"type": "string"},
+            "materialsUsed": {
+              "type": "array",
+              "items": {"type": "string"}
+            }
+          }
+        }
+      }
+    }
+  }
