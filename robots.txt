@@ -7,3 +7,4 @@ Disallow: /.git/*
 Disallow: /.git
 Disallow: /README.md
 Disallow: /_config.yml
+Disallow: /verify/*

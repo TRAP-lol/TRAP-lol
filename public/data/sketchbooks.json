@@ -1,0 +1,29 @@
+{
+    "grimoireId": "SKB-001-ORIGIN",
+    "creationDate": "2025-04-03T00:00:00Z",
+    "metaphysicalProperties": {
+      "moonPhase": "[Moon Phase]"
+    },
+    "pages": [
+      {
+        "fragmentId": "P-01",
+        "imagePath": "/noise/perfectionSelfDestruction/one/sketch/001.webp",
+        "bloodNotes": "[NOTES]",
+        "toolsUsed": ["TOOL 1", "TOOL 2"],
+        "bloodSignature": {
+            "hash": "a1b2...",
+            "verificationQR": "/public/img/verify/skb/001/002.webp"
+        }
+      },
+      {
+        "fragmentId": "P-02",
+        "imagePath": "/noise/perfectionSelfDestruction/one/sketch/002.webp",
+        "bloodNotes": "[NOTES]",
+        "toolsUsed": ["TOOL 1", "TOOL 2"],
+        "bloodSignature": {
+            "hash": "a1b2...",
+            "verificationQR": "/public/img/verify/skb/001/002.webp"
+        }
+      }
+    ]
+  }

@@ -1,0 +1,29 @@
+{
+    "manifest": {
+      "covenantVersion": "blood-oath-1.0",
+      "lastSanctification": "2025-04-23T00:00:00Z"
+    },
+    "messages": [
+      {
+        "id": "000001",
+        "timestamp": "2025-04-23T00:00:00Z",
+        "verificationHash": "a3f4c8..",
+        "qrPath": "/public/img/verify/msg/qr/000001.png",
+        "original": "[LINK]",
+        "title": "[TITLE]",
+        "text": "[TEXT]",
+        "AdditionalAttachments": [
+          {
+            "attachmentId": "ATT-000001",
+            "path": "/public/img/attachments/000001.png",
+            "description": "[DESCRIPTION]"
+          },
+          {
+            "attachmentId": "ATT-000002",
+            "path": "/public/img/attachments/000002.png",
+            "description": "[DESCRIPTION]"
+          }
+        ]
+      }
+    ]
+  }
