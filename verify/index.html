@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VERIFICATION LOCK</title>
+    <style>
+      :root {
+        --blood: #3a0000;
+        --flesh: #ffe5e5;
+        --black: #0a0a0a;
+        --ease: cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      body {
+        background: var(--black);
+        color: var(--flesh);
+        font-family: "Courier Prime", monospace;
+        min-height: 100vh;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .verification-altar {
+        max-width: 1000px;
+        width: 90%;
+        margin: 2rem auto;
+      }
+
+      .blood-lock {
+        display: grid;
+        grid-template-columns: 120px 2px repeat(6, 1fr);
+        gap: 1rem;
+        padding: 2rem;
+        border: 3px solid var(--blood);
+        background: repeating-linear-gradient(
+          45deg,
+          rgba(58, 0, 0, 0.1),
+          rgba(58, 0, 0, 0.1) 10px,
+          transparent 11px
+        );
+        margin-bottom: 3rem;
+      }
+
+      .prefix-selector {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .lock-divider {
+        width: 2px;
+        background: var(--blood);
+        margin: 0 1rem;
+      }
+
+      .cipher-wheel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .blood-arrow {
+        color: var(--blood);
+        cursor: pointer;
+        font-size: 1.5rem;
+        transition: all 0.3s var(--ease);
+        user-select: none;
+      }
+
+      .blood-arrow:hover {
+        text-shadow: 0 0 10px var(--blood);
+      }
+
+      .lock-char {
+        font-size: 2rem;
+        margin: 0.5rem 0;
+        width: 2.5rem;
+        text-align: center;
+        border-bottom: 2px solid var(--blood);
+        text-transform: uppercase;
+      }
+
+      .artifact-display {
+        border: 2px solid var(--blood);
+        padding: 2rem;
+        margin-top: 2rem;
+        position: relative;
+        background: rgba(58, 0, 0, 0.05);
+      }
+
+      .artifact-display::before {
+        content: "VERIFIED ARTIFACT";
+        position: absolute;
+        top: -12px;
+        left: 1rem;
+        background: var(--black);
+        padding: 0 0.5rem;
+        font-size: 0.8rem;
+      }
+
+      .artifact-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--blood);
+      }
+
+      .artifact-title {
+        font-size: 1.8rem;
+        margin: 0;
+        color: var(--flesh);
+        letter-spacing: -0.05em;
+      }
+
+      .artifact-meta {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-bottom: 2rem;
+        padding: 1rem;
+        background: rgba(58, 0, 0, 0.1);
+      }
+
+      .meta-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem;
+        border-bottom: 1px solid rgba(58, 0, 0, 0.3);
+      }
+
+      .meta-label {
+        color: var(--blood);
+        font-weight: bold;
+      }
+
+      .artifact-content {
+        margin: 2rem 0;
+      }
+
+      .text-content {
+        white-space: pre-wrap;
+        background: rgba(58, 0, 0, 0.1);
+        padding: 2rem;
+        border-radius: 3px;
+        line-height: 1.6;
+      }
+
+      .media-container {
+        position: relative;
+        margin: 2rem 0;
+        border: 3px solid var(--blood);
+      }
+
+      .artifact-image {
+        width: 100%;
+        display: block;
+      }
+
+      .audio-player {
+        width: 100%;
+        margin: 1rem 0;
+      }
+
+      .pdf-viewer {
+        width: 100%;
+        height: 600px;
+        border: 1px solid var(--blood);
+      }
+
+      .attachments-section {
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--blood);
+      }
+
+      .attachments-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .attachment-card {
+        padding: 1rem;
+        border: 1px solid var(--blood);
+        text-align: center;
+        transition: all 0.3s var(--ease);
+      }
+
+      .attachment-card:hover {
+        background: rgba(58, 0, 0, 0.1);
+      }
+
+      .hash-display {
+        margin-top: 2rem;
+        padding: 1rem;
+        background: rgba(58, 0, 0, 0.1);
+        word-break: break-all;
+      }
+
+      .blood-link {
+        color: var(--blood);
+        text-decoration: none;
+        border-bottom: 1px solid var(--blood);
+        transition: all 0.3s var(--ease);
+      }
+
+      .blood-link:hover {
+        color: var(--flesh);
+        border-bottom-color: var(--flesh);
+      }
+
+      .timestamp {
+        font-size: 0.9rem;
+        opacity: 0.7;
+      }
+
+      .tech-specs {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .tech-item {
+        padding: 0.5rem;
+        background: rgba(58, 0, 0, 0.1);
+        font-family: "Courier Prime", monospace;
+      }
+      .attachment-card {
+        padding: 1.5rem;
+        border: 2px solid var(--blood);
+        margin: 1rem 0;
+        background: rgba(58, 0, 0, 0.1);
+      }
+
+      .attachment-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+
+      .attachment-id {
+        font-family: "Courier Prime", monospace;
+        color: var(--blood);
+        font-size: 1.1rem;
+      }
+
+      .verify-button {
+        background: none;
+        border: 1px solid var(--blood);
+        color: var(--flesh);
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        transition: all 0.3s var(--ease);
+      }
+
+      .verify-button:hover {
+        background: var(--blood);
+      }
+
+      .sentence-connections {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .connection-card {
+        padding: 1rem;
+        border: 1px solid var(--blood);
+        background: rgba(58, 0, 0, 0.05);
+      }
+
+      .connection-type {
+        color: var(--blood);
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="verification-altar">
+      <div class="blood-lock">
+        <div class="prefix-selector">
+          <div class="blood-arrow up" id="prefixUp">▲</div>
+          <div class="lock-char" id="currentPrefix">TXT</div>
+          <div class="blood-arrow down" id="prefixDown">▼</div>
+        </div>
+        <div class="lock-divider"></div>
+        <div class="cipher-wheel" data-index="0">
+          <div class="blood-arrow up">▲</div>
+          <div class="lock-char">0</div>
+          <div class="blood-arrow down">▼</div>
+        </div>
+        <div class="cipher-wheel" data-index="0">
+          <div class="blood-arrow up">▲</div>
+          <div class="lock-char">0</div>
+          <div class="blood-arrow down">▼</div>
+        </div>
+        <div class="cipher-wheel" data-index="0">
+          <div class="blood-arrow up">▲</div>
+          <div class="lock-char">0</div>
+          <div class="blood-arrow down">▼</div>
+        </div>
+        <div class="cipher-wheel" data-index="0">
+          <div class="blood-arrow up">▲</div>
+          <div class="lock-char">0</div>
+          <div class="blood-arrow down">▼</div>
+        </div>
+        <div class="cipher-wheel" data-index="0">
+          <div class="blood-arrow up">▲</div>
+          <div class="lock-char">0</div>
+          <div class="blood-arrow down">▼</div>
+        </div>
+        <div class="cipher-wheel" data-index="0">
+          <div class="blood-arrow up">▲</div>
+          <div class="lock-char">0</div>
+          <div class="blood-arrow down">▼</div>
+        </div>
+      </div>
+
+      <div class="artifact-display">
+        <div class="artifact-content" id="artifactContent">
+          <div class="default-message">SELECT VERIFICATION CODE</div>
+        </div>
+        <div class="hash-display" id="hashDisplay"></div>
+      </div>
+    </div>
+
+    <script>
+      const PREFIX_MAP = {
+        TXT: "text",
+        EMO: "emotion",
+        SCH: "sketch",
+        INS: "inspiration",
+        NSE: "noise",
+        POE: "poem",
+        SEN: "sentence",
+        SKB: "sketchbook",
+        CER: "certificate",
+        ATT: "attachment",
+        SMP: "socialmediapost",
+      };
+
+      const ID_FIELD_MAP = {
+        text: "textid",
+        emotion: "emotionid",
+        sketch: "sketchid",
+        inspiration: "inspirationid",
+        noise: "noiseid",
+        poem: "poemid",
+        sentence: "sentenceid",
+        sketchbook: "sketchbookid",
+        certificate: "certificateid",
+        attachment: "attachmentId",
+        socialmediapost: "postid",
+      };
+
+      const BLOOD_CHARS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      const PREFIXES = Object.keys(PREFIX_MAP);
+      let currentPrefixIndex = 0;
+      let currentId = Array(6).fill("0");
+      let verificationData = {};
+
+      async function loadVerificationData() {
+        try {
+          const response = await fetch("/public/data/verification.json");
+          if (!response.ok)
+            throw new Error(`HTTP error! status: ${response.status}`);
+          verificationData = await response.json();
+        } catch (error) {
+          console.error("Failed to load blood covenant:", error);
+          document.getElementById("artifactContent").innerHTML =
+            '<div class="artifact-text">BLOOD COVENANT CORRUPTED</div>';
+        }
+      }
+
+      function parseHash() {
+        const hash = window.location.hash.substr(1);
+        if (!hash) return;
+
+        const [prefix, id] = hash.split("-");
+        if (!prefix || !id || id.length !== 6) return;
+
+        const prefixIndex = PREFIXES.indexOf(prefix);
+        if (prefixIndex > -1) currentPrefixIndex = prefixIndex;
+
+        currentId = id.split("").slice(0, 6);
+      }
+
+      function getArtifactFilePath(type, fileName) {
+        const directoryMap = {
+          text: "textdirectory",
+          emotion: "emotiondirectory",
+          sketch: "sketchdirectory",
+          inspiration: "inspirationdirectory",
+          noise: "noisedirectory",
+          poem: "poemdirectory",
+          sentence: "sentencedirectory",
+          sketchbook: "sketchbookdirectory",
+          certificate: "certificatedirectory",
+          attachment: "attachmentdirectory",
+          socialmediapost: "socialmediapostdirectory",
+          audio: "poemaudiodirectory",
+        };
+
+        const directory = verificationData.default?.[directoryMap[type]] || "";
+        return `${directory}${fileName}`;
+      }
+
+      document.getElementById("prefixUp").addEventListener("click", () => {
+        currentPrefixIndex =
+          (currentPrefixIndex - 1 + PREFIXES.length) % PREFIXES.length;
+        updateVerification();
+      });
+
+      document.getElementById("prefixDown").addEventListener("click", () => {
+        currentPrefixIndex = (currentPrefixIndex + 1) % PREFIXES.length;
+        updateVerification();
+      });
+
+      document.querySelectorAll(".cipher-wheel").forEach((wheel, index) => {
+        wheel
+          .querySelector(".up")
+          .addEventListener("click", () => rotateChar(index, 1));
+        wheel
+          .querySelector(".down")
+          .addEventListener("click", () => rotateChar(index, -1));
+      });
+
+      function rotateChar(index, delta) {
+        const current = currentId[index];
+        const newIndex =
+          (BLOOD_CHARS.indexOf(current) + delta + BLOOD_CHARS.length) %
+          BLOOD_CHARS.length;
+        currentId[index] = BLOOD_CHARS[newIndex];
+        updateVerification();
+      }
+
+      function updateVerification() {
+        document.getElementById("currentPrefix").textContent =
+          PREFIXES[currentPrefixIndex];
+        document
+          .querySelectorAll(".cipher-wheel .lock-char")
+          .forEach((el, i) => {
+            el.textContent = currentId[i];
+          });
+
+        const prefix = PREFIXES[currentPrefixIndex];
+        const id = currentId.join("");
+        const artifactType = PREFIX_MAP[prefix];
+        const idField = ID_FIELD_MAP[artifactType];
+        const artifact = verificationData[artifactType]?.find(
+          (a) => a[idField] === id
+        );
+
+        window.location.hash = `${prefix}-${id}`;
+        updateArtifactDisplay(artifact, artifactType);
+      }
+
+      function updateArtifactDisplay(artifact, type) {
+        const contentEl = document.getElementById("artifactContent");
+        const hashEl = document.getElementById("hashDisplay");
+
+        if (!artifact) {
+          contentEl.innerHTML =
+            '<div class="default-message">NO VERIFIED ARTIFACT FOUND</div>';
+          hashEl.textContent = "0".repeat(64);
+          return;
+        }
+
+        const verification = artifact.verification || {};
+        const filePath = getArtifactFilePath(type, verification.whathashed);
+        const meta = verificationData.meta?.[`${type}meta`] || {};
+
+        let content = `
+                <div class="artifact-header">
+                    <h1 class="artifact-title">${
+                      artifact.title || "Untitled Artifact"
+                    }</h1>
+                    ${
+                      artifact.timestamp
+                        ? `<div class="timestamp">${new Date(
+                            artifact.timestamp
+                          ).toLocaleString()}</div>`
+                        : ""
+                    }
+                </div>
+            `;
+
+        switch (type) {
+          case "text":
+          case "poem":
+          case "emotion":
+            content += `
+                        <div class="artifact-content">
+                            <pre class="text-content">${
+                              artifact.rawContent || artifact.description
+                            }</pre>
+                            <div class="tech-specs">
+                                ${
+                                  meta.language
+                                    ? `<div class="tech-item">Language: ${meta.language}</div>`
+                                    : ""
+                                }
+                                ${
+                                  meta.charCount
+                                    ? `<div class="tech-item">Characters: ${meta.charCount}</div>`
+                                    : ""
+                                }
+                                <div class="tech-item">Source File: <a href="${filePath}" class="blood-link">${filePath
+              .split("/")
+              .pop()}</a></div>
+                            </div>
+                        </div>
+                    `;
+            break;
+
+          case "sketch":
+          case "inspiration":
+          case "noise":
+            content += `
+                        <div class="media-container">
+                            <img src="${filePath}" class="artifact-image" alt="${
+              artifact.description
+            }">
+                            <div class="artifact-meta">
+                                ${
+                                  artifact.description
+                                    ? `<div class="meta-item"><span class="meta-label">Description:</span>${artifact.description}</div>`
+                                    : ""
+                                }
+                                ${
+                                  meta.dimensions
+                                    ? `<div class="meta-item"><span class="meta-label">Dimensions:</span>${meta.dimensions}</div>`
+                                    : ""
+                                }
+                                ${
+                                  meta.exifHash
+                                    ? `<div class="meta-item"><span class="meta-label">EXIF Hash:</span><code>${meta.exifHash}</code></div>`
+                                    : ""
+                                }
+                            </div>
+                        </div>
+                    `;
+            break;
+
+          case "audio":
+            content += `
+                        <div class="artifact-content">
+                            <audio controls class="audio-player" src="${filePath}"></audio>
+                            <div class="tech-specs">
+                                ${
+                                  meta.duration
+                                    ? `<div class="tech-item">Duration: ${meta.duration}</div>`
+                                    : ""
+                                }
+                                ${
+                                  meta.sampleRate
+                                    ? `<div class="tech-item">Sample Rate: ${meta.sampleRate}</div>`
+                                    : ""
+                                }
+                                <div class="tech-item">File: <a href="${filePath}" class="blood-link" download>${filePath
+              .split("/")
+              .pop()}</a></div>
+                            </div>
+                        </div>
+                    `;
+            break;
+
+          case "socialmediapost":
+            content += `
+                        <div class="artifact-content">
+                            <div class="artifact-meta">
+                                <div class="meta-item"><span class="meta-label">Platform:</span>${
+                                  artifact.original.split("/")[2]
+                                }</div>
+                                <div class="meta-item"><span class="meta-label">Posted:</span>${new Date(
+                                  artifact.timestamp
+                                ).toLocaleString()}</div>
+                                <div class="meta-item"><span class="meta-label">URL:</span><a href="${
+                                  artifact.original
+                                }" class="blood-link" target="_blank">View Original</a></div>
+                            </div>
+                            ${
+                              artifact.rawContent
+                                ? `<div class="text-content">${artifact.rawContent}</div>`
+                                : ""
+                            }
+                        </div>
+                    `;
+            break;
+
+          case "sketchbook":
+          case "certificate":
+            content += `
+                        <div class="artifact-content">
+                            <iframe src="${filePath}" class="pdf-viewer"></iframe>
+                            <div class="tech-specs">
+                                <div class="tech-item">Pages: ${
+                                  type === "sketchbook"
+                                    ? artifact.pages.length
+                                    : "N/A"
+                                }</div>
+                                <div class="tech-item">File: <a href="${filePath}" class="blood-link" download>Download ${type}</a></div>
+                            </div>
+                        </div>
+                    `;
+            break;
+          case "sentence":
+            content += `
+                        <div class="artifact-content">
+                            <pre class="text-content">${
+                              artifact.description
+                            }</pre>
+                            <div class="sentence-connections">
+                                ${this.renderConnections(artifact)}
+                            </div>
+                        </div>
+                    `;
+            break;
+
+          default:
+            content += `
+                        <div class="artifact-content">
+                            <div class="text-content">${JSON.stringify(
+                              artifact,
+                              null,
+                              2
+                            )}</div>
+                        </div>
+                    `;
+        }
+
+        if (artifact.attachments?.length) {
+          content += `
+                    <div class="attachments-section">
+                        <h3>Linked Artifacts</h3>
+                        <div class="attachments-grid">
+                           ${this.renderAttachments(artifact.attachments)}
+                        </div>
+                    </div>
+                `;
+        }
+
+        hashEl.innerHTML = `
+                <div class="tech-specs">
+                    <div class="tech-item">Verification Hash: <code>${
+                      verification.sha256 || "HASH_UNAVAILABLE"
+                    }</code></div>
+                    <div class="tech-item">Validation Protocol: ${
+                      verificationData.meta?.verificationmeta?.hashingProtocols[
+                        type
+                      ] || "Unknown"
+                    }</div>
+                </div>
+            `;
+
+        contentEl.innerHTML = content;
+      }
+
+      function renderAttachments(attachments) {
+        return attachments
+          .map((attachmentId) => {
+            const [prefix] = attachmentId.split("-");
+            const type = PREFIX_MAP[prefix];
+            const attachment = verificationData[type]?.find(
+              (a) => a[ID_FIELD_MAP[type]] === attachmentId
+            );
+
+            return `
+                    <div class="attachment-card">
+                        <div class="attachment-header">
+                            <div class="attachment-id">${attachmentId}</div>
+                            <button class="verify-button" 
+                                onclick="window.location.hash='${attachmentId}';location.reload()">
+                                Verify
+                            </button>
+                        </div>
+                        ${
+                          attachment
+                            ? `
+                            <div class="attachment-info">
+                                ${
+                                  attachment.description
+                                    ? `<div>${attachment.description}</div>`
+                                    : ""
+                                }
+                                ${
+                                  attachment.verification?.whathashed
+                                    ? `
+                                    <div class="file-reference">
+                                        File: ${attachment.verification.whathashed
+                                          .split("/")
+                                          .pop()}
+                                    </div>
+                                `
+                                    : ""
+                                }
+                            </div>
+                        `
+                            : ""
+                        }
+                    </div>
+                `;
+          })
+          .join("");
+      }
+
+      function renderConnections(sentence) {
+        const connections = [
+          { type: "Emotion", id: sentence.emotionid },
+          { type: "Sketch", ids: sentence.sketchid },
+          { type: "Inspiration", id: sentence.inspirationid },
+          { type: "Noise", id: sentence.noiseid },
+          { type: "Poem", id: sentence.poemid },
+          { type: "Certificate", id: sentence.certificateid },
+        ];
+
+        return connections
+          .map((conn) => {
+            if (!conn.id && !conn.ids) return "";
+            const ids = conn.ids || [conn.id];
+
+            return ids
+              .map(
+                (id) => `
+                    <div class="connection-card">
+                        <div class="connection-type">${conn.type}</div>
+                        <div class="connection-id">${id}</div>
+                        <button class="verify-button" 
+                            onclick="window.location.hash='${id}';location.reload()">
+                            Verify ${conn.type}
+                        </button>
+                    </div>
+                `
+              )
+              .join("");
+          })
+          .join("");
+      }
+
+      loadVerificationData().then(() => {
+        parseHash();
+        updateVerification();
+      });
+    </script>
+  </body>
+</html>

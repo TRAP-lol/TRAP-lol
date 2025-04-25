@@ -1,0 +1,301 @@
+{
+  "meta": {
+    "verificationmeta": {
+      "version": "v1.0",
+      "this256": "[HASH]",
+      "hashingProtocols": {
+        "text": "SHA3-256(rawContent.md UTF-8 encoded)",
+        "audio": "SHA3-256(file bytes)",
+        "image": "SHA3-256(file bytes + EXIF data sorted alphabetically)"
+      },
+      "lastupdate": "2025-04-30T23:59:60Z",
+      "noiserequirements": [
+        "[emotionid]",
+        "[sketchid]",
+        "[insporationid]",
+        "[noiseid]",
+        "[poemid]",
+        "[sentenceid]",
+        "[certificateid]"
+      ]
+    },
+    "idformats": {
+        "emotion": "EMO-[A-Z0-9]{6}",
+        "sketch": "SCH-[A-Z0-9]{6}",
+        "inspiration": "INS-[A-Z0-9]{6}",
+        "noise": "NSE-[A-Z0-9]{6}",
+        "poem": "POE-[A-Z0-9]{6}",
+        "sentence": "SEN-[A-Z0-9]{6}",
+        "sketchbook": "SKB-[A-Z0-9]{6}",
+        "sketchbookpage": "SBP-[A-Z0-9]{6}",
+        "certificate": "CER-[A-Z0-9]{6}",
+        "attachment": "ATT-[A-Z0-9]{6}",
+        "text": "TXT-[A-Z0-9]{6}",
+        "socialmediapost": "SMP-[A-Z0-9]{6}"
+    },
+    "emotionmeta": {
+      "description": "Emotional intent of the noise",
+      "prefix": "EMO",
+      "type": "text",
+      "filetype": "md"
+    },
+    "sketchmeta": {
+      "description": "Pencil Sketches",
+      "prefix": "SCH",
+      "type": "image",
+      "filetype": "webp",
+      "addtohash": ["sketchid", "title", "description"]
+    },
+    "inspirationmeta": {
+      "description": "Photos of inspiration",
+      "prefix": "INS",
+      "type": "image",
+      "filetype": "webp",
+      "addtohash": ["inspirationid", "title", "description"]
+    },
+    "noisemeta": {
+      "description": "Visualized noise",
+      "prefix": "NSE",
+      "type": "image",
+      "filetype": "webp",
+      "addtohash": ["noiseid", "title", "description"]
+    },
+    "poemmeta": {
+      "description": "Poems of relevance",
+      "prefix": "POE",
+      "type": "text",
+      "filetype": "md",
+      "addtohash": ["poemid", "title", "description"]
+    },
+    "poemaudiometa": {
+      "description": "Audio of the poem",
+      "prefix": "POA",
+      "type": "audio",
+      "filetype": "flac",
+      "addtohash": ["audioid", "title", "description"]
+    },
+    "sentencemeta": {
+      "description": "Noise collection",
+      "prefix": "SEN",
+      "type": "text",
+      "filetype": "md",
+      "addtohash": [
+        "sentenceid",
+        "title",
+        "description",
+        "emotionid",
+        "sketchid",
+        "inspirationid",
+        "noiseid",
+        "poemid",
+        "certificateid"
+      ]
+    },
+    "sketchbookmeta": {
+      "description": "Entire sketchbook",
+      "prefix": "SKB",
+      "type": "file",
+      "filetype": "pdf",
+      "addtohash": ["sketchbookid", "finishDate"]
+    },
+    "sketchbookpagemeta": {
+      "prefix": "SBP"
+    },
+    "certificatemeta": {
+      "description": "Certificate of authenticity",
+      "prefix": "CER",
+      "type": "file",
+      "filetype": "pdf",
+      "addtohash": ["certificateid", "title", "description"]
+    },
+    "attachmentmeta": {
+      "description": "Attachments",
+      "prefix": "ATT",
+      "type": "file",
+      "filetype": "png/pdf",
+      "addtohash": ["attachmentId", "description"]
+    },
+    "textmeta": {
+      "description": "Textual content",
+      "prefix": "TXT",
+      "type": "text",
+      "filetype": "md",
+      "addtohash": ["textid", "title", "description", "rawContent", "timestamp"]
+    },
+    "socialmediapostmeta": {
+      "description": "Social media posts",
+      "prefix": "SMP",
+      "type": "text",
+      "filetype": "md",
+      "addtohash": ["postid", "original", "timestamp"]
+    }
+  },
+  "default": {
+    "series": "NULL",
+    "edition": "NULL",
+    "author": "TRAP",
+    "qrdirectory": "/resources/verify/",
+    "emotiondirectory": "/resources/emotion/",
+    "sketchdirectory": "/resources/sketch/",
+    "sketchbookdirectory": "/resources/sketchbook/",
+    "inspirationdirectory": "/resources/inspiration/",
+    "noisedirectory": "/resources/noise/",
+    "poemdirectory": "/resources/poem/",
+    "poemaudiodirectory": "/resources/audio/",
+    "certificatedirectory": "/resources/certificate/",
+    "attachmentdirectory": "/resources/attachment/",
+    "textdirectory": "/resources/text/",
+    "socialmediapostdirectory": "/resources/socialmedia/"
+  },
+  "sketchbook": [
+    {
+      "sketchbookid": "123456",
+      "finishDate": "2025-04-03T00:00:00Z",
+      "pages": [
+        {
+          "pageid": "123456",
+          "sketchid": "T7ZHSU"
+        },
+        {
+          "pageid": "123457",
+          "sketchid": "T7ZHSR"
+        }
+      ],
+      "verification": {
+        "whathashed": "SKB-123456.pdf",
+        "sha256": "[HASH]"
+      }
+    }
+  ],
+  "sketch": [
+    {
+      "sketchid": "123456",
+      "title": "[NAME]",
+      "description": "[DESCRIPTION]",
+      "notes": "[NOTES]",
+      "verification": {
+        "whathashed": "SCH-123456.webp",
+        "sha256": "[HASH]"
+      }
+    }
+  ],
+  "inspiration": [
+    {
+      "inspirationid": "123456",
+      "title": "[TITLE]",
+      "description": "[DESCRIPTION]",
+      "notes": "[NOTES]",
+      "verification": {
+        "whathashed": "INS-123456.webp",
+        "sha256": "[HASH]"
+      }
+    }
+  ],
+  "noise": [
+    {
+      "noiseid": "123456",
+      "title": "Carnival Of Flesh",
+      "description": "[DESCRIPTION]",
+      "validation": {
+        "whathashed": "NSE-123456.webp",
+        "sha256": "[HASH]"
+      }
+    }
+  ],
+  "poem": [
+    {
+      "poemid": "123456",
+      "title": "[TITLE]",
+      "description": "[DESCRIPTION]",
+      "verification": {
+        "whathashed": "POE-123456.md",
+        "sha256": "[HASH]"
+      }
+    }
+  ],
+  "sentence": [
+    {
+      "sentenceid": "123456",
+      "title": "[TITLE]",
+      "description": "[DESCRIPTION]",
+      "emotionid": "[EMOTIONID]",
+      "sketchid": ["SKT-4J8D2H", "SKT-1K9F3M"],
+      "inspirationid": "[INSPIRATIONID]",
+      "noiseid": "[NOISEID]",
+      "poemid": "[POEMID]",
+      "certificateid": "[CERTIFICATEID]",
+      "verification": {
+        "whathashed": "SEN-123456.md",
+        "sha256": "[HASH]"
+      }
+    }
+  ],
+  "certificate": [
+    {
+      "certificateid": "123456",
+      "title": "[TITLE]",
+      "description": "[DESCRIPTION]",
+      "verification": {
+        "whathashed": "CER-123456.pdf",
+        "sha256": "[HASH]"
+      }
+    }
+  ],
+  "audio": [
+    {
+      "audioid": "123456",
+      "title": "[TITLE]",
+      "description": "[DESCRIPTION]",
+      "verification": {
+        "whathashed": "POA-123456.flac",
+        "sha256": "[HASH]"
+      }
+    }
+  ],
+  "attachment": [
+    {
+      "attachmentId": "123456",
+      "description": "[DESCRIPTION]",
+      "verification": {
+        "whathashed": "ATT-123456.png",
+        "sha256": "[HASH]"
+      }
+    }
+  ],
+  "socialmediapost": [
+    {
+      "postid": "123456",
+      "original": "https://social.com/post/123",
+      "timestamp": "2025-04-24T00:00:00Z",
+      "attachments": ["EFGH23", "TSGQFR"],
+      "verification": {
+        "whathashed": "SMP-123456.md",
+        "sha256": "[HASH]"
+      }
+    }
+  ],
+  "text": [
+    {
+      "textid": "123456",
+      "title": "[TITLE]",
+      "description": "[DESCRIPTION]",
+      "rawContent": "[RAW CONTENT]",
+      "timestamp": "2025-04-24T00:00:00Z",
+      "verification": {
+        "whathashed": "TXT-123456.md",
+        "sha256": "[HASH]"
+      }
+    }
+  ],
+  "emotion": [
+    {
+      "emotionid": "123456",
+      "title": "[TITLE]",
+      "description": "[DESCRIPTION]",
+      "verification": {
+        "whathashed": "EMO-123456.md",
+        "sha256": "[HASH]"
+      }
+    }
+  ]
+}
