@@ -1,0 +1,10 @@
+{
+  "pid": {
+    "id": "DEFFLT",
+    "prefix": "PID",
+    "monopolizes": ["sentenceid"],
+    "verification": {
+      "pubkey": "publickey"
+    }
+  }
+}

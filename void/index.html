@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Void</title>
+    <style>
+        :root {
+            --blood: #3a0000;
+            --flesh: #ffe5e5;
+            --black: #0a0a0a;
+            --ease: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            background: var(--black);
+            color: var(--flesh);
+            font-family: 'Courier Prime', monospace;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .blog-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .post-card {
+            border: 2px solid var(--blood);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            background: rgba(58,0,0,0.05);
+            transition: all 0.3s var(--ease);
+        }
+
+        .post-card:hover {
+            transform: translateY(-3px);
+            background: rgba(58,0,0,0.1);
+        }
+
+        .post-title {
+            font-size: 2rem;
+            margin: 0 0 1rem;
+            color: var(--blood);
+        }
+
+        .post-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .post-description {
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more {
+            background: none;
+            border: 1px solid var(--blood);
+            color: var(--flesh);
+            padding: 0.5rem 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s var(--ease);
+        }
+
+        .read-more:hover {
+            background: var(--blood);
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            overflow-y: auto;
+            padding: 3rem 1rem;
+        }
+
+        .modal-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            margin-bottom: 5rem;
+            background: var(--black);
+            border: 2px solid var(--blood);
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--blood);
+            border: none;
+            color: var(--flesh);
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+
+        .md-content h1, .md-content h2, .md-content h3 {
+            color: var(--blood);
+            border-bottom: 1px solid var(--blood);
+            padding-bottom: 0.5rem;
+            margin: 2rem 0 1.5rem;
+        }
+
+        .md-content p {
+            margin: 1.5rem 0;
+        }
+
+        .md-content a {
+            color: var(--blood);
+            text-decoration: underline;
+        }
+
+        .md-content a:hover {
+            color: var(--flesh);
+        }
+
+        .md-content ul, .md-content ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .md-content li {
+            margin: 0.5rem 0;
+        }
+
+        .md-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 2rem 0;
+            border: 1px solid var(--blood);
+        }
+
+        .md-content pre {
+            background: rgba(58,0,0,0.15);
+            padding: 1.5rem;
+            overflow-x: auto;
+            margin: 2rem 0;
+            border: 1px solid var(--blood);
+        }
+
+        .md-content code {
+            font-family: 'Courier Prime', monospace;
+            background: rgba(58,0,0,0.15);
+            padding: 0.2rem 0.4rem;
+        }
+
+        .md-content blockquote {
+            border-left: 3px solid var(--blood);
+            margin: 2rem 0;
+            padding-left: 1.5rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+        .md-hash {
+            display: block;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--blood);
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="blog-container" id="blogContainer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        async function loadBlog() {
+            try {
+                // Get blog post metadata
+                const response = await fetch('/public/data/verification.json');
+                const data = await response.json();
+                const posts = data.blogpost || [];
+
+                // Sort by timestamp (newest first)
+                posts.sort((a, b) => 
+                    new Date(b.timestamp) - new Date(a.timestamp));
+
+                // Render posts
+                renderPosts(posts);
+
+            } catch (error) {
+                console.error('Blood archive corrupted:', error);
+            }
+        }
+
+        function renderPosts(posts) {
+            const container = document.getElementById('blogContainer');
+
+            posts.forEach(post => {
+                const card = document.createElement('article');
+                card.className = 'post-card';
+                card.innerHTML = `
+                    <h2 class="post-title" href="BLO-#${post.blogid}">${post.title}</h2>
+                    <div class="post-meta">
+                        <span>${new Date(post.timestamp).toLocaleDateString()}</span>
+                        <span>•</span>
+                        <span>ID: BLO-${post.blogid}</span>
+                    </div>
+                    <div class="post-description">${post.description}</div>
+                    <button class="read-more" data-id="${post.blogid}">
+                        DELVE DEEPER
+                    </button>
+                `;
+
+                card.querySelector('button').addEventListener('click', () => {
+                    const posthash = post.verification.sha256;
+                    showPost(post.verification.whathashed, posthash);
+                });
+
+                container.appendChild(card);
+            });
+        }
+
+        async function showPost(filename, posthash) {
+            try {
+                const response = await fetch(`/resources/blog/${filename}`);
+                const mdContent = await response.text();
+                const htmlContent = marked.parse(mdContent);
+
+                const modal = document.createElement('div');
+                modal.className = 'modal-overlay';
+                modal.innerHTML = `
+                    <div class="modal-content">
+                        <button class="modal-close" onclick="this.parentElement.parentElement.remove()">
+                            CLOSE
+                        </button>
+                        <div class="md-content">${htmlContent}</div>
+                        <span class="md-hash">${posthash}</span>
+                    </div>
+                `;
+
+                document.body.appendChild(modal);
+                addPostBehaviors();
+
+            } catch (error) {
+                console.error('Failed to spill blood:', error);
+            }
+        }
+
+        function addPostBehaviors() {
+            document.querySelectorAll('.md-content h1, .md-content h2, .md-content h3').forEach(header => {
+                header.innerHTML = `
+                    <a href="#${header.id || header.textContent.toLowerCase().replace(/\s/g, '-')}"
+                        style="color: inherit; text-decoration: none;">
+                        ${header.innerHTML}
+                    </a>
+                `;
+            });
+
+            document.querySelectorAll('.md-content a').forEach(link => {
+                if (!link.href.startsWith(window.location.origin)) {
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                }
+            });
+        }
+
+        marked.setOptions({
+            breaks: true,
+            gfm: true
+        });
+
+        loadBlog();
+    </script>
+</body>
+</html>

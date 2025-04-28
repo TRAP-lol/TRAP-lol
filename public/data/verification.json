@@ -3,11 +3,7 @@
     "verificationmeta": {
       "version": "v1.0",
       "this256": "[HASH]",
-      "hashingProtocols": {
-        "text": "SHA3-256(rawContent.md UTF-8 encoded)",
-        "audio": "SHA3-256(file bytes)",
-        "image": "SHA3-256(file bytes + EXIF data sorted alphabetically)"
-      },
+      "hashingProtocols": "sha256",
       "lastupdate": "2025-04-30T23:59:60Z",
       "noiserequirements": [
         "[emotionid]",
@@ -20,24 +16,26 @@
       ]
     },
     "idformats": {
-        "emotion": "EMO-[A-Z0-9]{6}",
-        "sketch": "SCH-[A-Z0-9]{6}",
-        "inspiration": "INS-[A-Z0-9]{6}",
-        "noise": "NSE-[A-Z0-9]{6}",
-        "poem": "POE-[A-Z0-9]{6}",
-        "sentence": "SEN-[A-Z0-9]{6}",
-        "sketchbook": "SKB-[A-Z0-9]{6}",
-        "sketchbookpage": "SBP-[A-Z0-9]{6}",
-        "certificate": "CER-[A-Z0-9]{6}",
-        "attachment": "ATT-[A-Z0-9]{6}",
-        "text": "TXT-[A-Z0-9]{6}",
-        "socialmediapost": "SMP-[A-Z0-9]{6}"
+      "emotion": "EMO-[A-Z0-9]{6}",
+      "sketch": "SCH-[A-Z0-9]{6}",
+      "inspiration": "INS-[A-Z0-9]{6}",
+      "noise": "NSE-[A-Z0-9]{6}",
+      "poem": "POE-[A-Z0-9]{6}",
+      "sentence": "SEN-[A-Z0-9]{6}",
+      "sketchbook": "SKB-[A-Z0-9]{6}",
+      "sketchbookpage": "SBP-[A-Z0-9]{6}",
+      "certificate": "CER-[A-Z0-9]{6}",
+      "attachment": "ATT-[A-Z0-9]{6}",
+      "text": "TXT-[A-Z0-9]{6}",
+      "socialmediapost": "SMP-[A-Z0-9]{6}",
+      "blogposts": "BLO-[A-Z0-9]{6}"
     },
     "emotionmeta": {
       "description": "Emotional intent of the noise",
       "prefix": "EMO",
       "type": "text",
-      "filetype": "md"
+      "filetype": "md",
+      "addtohash": ["emotionid", "title", "description"]
     },
     "sketchmeta": {
       "description": "Pencil Sketches",
@@ -65,7 +63,7 @@
       "prefix": "POE",
       "type": "text",
       "filetype": "md",
-      "addtohash": ["poemid", "title", "description"]
+      "addtohash": ["poemid", "title", "description", "rawContent"]
     },
     "poemaudiometa": {
       "description": "Audio of the poem",
@@ -99,7 +97,9 @@
       "addtohash": ["sketchbookid", "finishDate"]
     },
     "sketchbookpagemeta": {
-      "prefix": "SBP"
+      "prefix": "SBP",
+      "description": "Sketchbook pages",
+      "addtohash": ["pageid", "pagenumber", "sketchid"]
     },
     "certificatemeta": {
       "description": "Certificate of authenticity",
@@ -128,37 +128,437 @@
       "type": "text",
       "filetype": "md",
       "addtohash": ["postid", "original", "timestamp"]
+    },
+    "blogpostmeta": {
+      "description": "Blog posts",
+      "prefix": "BLO",
+      "type": "text",
+      "filetype": "md",
+      "addtohash": ["postid", "timestamp", "title", "description"]
     }
   },
   "default": {
     "series": "NULL",
     "edition": "NULL",
     "author": "TRAP",
-    "qrdirectory": "/resources/verify/",
+    "attachmentdirectory": "/resources/attachment/",
+    "poemaudiodirectory": "/resources/audio/",
+    "certificatedirectory": "/resources/certificate/",
     "emotiondirectory": "/resources/emotion/",
-    "sketchdirectory": "/resources/sketch/",
-    "sketchbookdirectory": "/resources/sketchbook/",
     "inspirationdirectory": "/resources/inspiration/",
     "noisedirectory": "/resources/noise/",
     "poemdirectory": "/resources/poem/",
-    "poemaudiodirectory": "/resources/audio/",
-    "certificatedirectory": "/resources/certificate/",
-    "attachmentdirectory": "/resources/attachment/",
+    "sketchdirectory": "/resources/sketch/",
+    "sketchbookdirectory": "/resources/sketchbook/",
+    "socialmediadirectory": "/resources/socialmedia/",
     "textdirectory": "/resources/text/",
-    "socialmediapostdirectory": "/resources/socialmedia/"
+    "qrdirectory": "/resources/verify/",
+    "blogpostdirectory": "/resources/blog/"
   },
   "sketchbook": [
     {
-      "sketchbookid": "123456",
-      "finishDate": "2025-04-03T00:00:00Z",
+      "sketchbookid": "SBBFGR",
+      "finishDate": "0000-00-00T00:00:00Z",
       "pages": [
         {
-          "pageid": "123456",
-          "sketchid": "T7ZHSU"
+          "pageid": "E6ZYMU",
+          "pagenumber": 1,
+          "sketchid": "C2G53I",
+          "verification": {
+            "sha256": "[HASH]"
+          }
         },
         {
-          "pageid": "123457",
-          "sketchid": "T7ZHSR"
+          "pageid": "8PSIBW",
+          "pagenumber": 2,
+          "sketchid": "ZN7GOH",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "YBO8FP",
+          "pagenumber": 3,
+          "sketchid": "U6MDG6",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "E76Y06",
+          "pagenumber": 4,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "JD7WCC",
+          "pagenumber": 5,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "JBINNY",
+          "pagenumber": 6,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "2150AD",
+          "pagenumber": 7,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "1AGQ2D",
+          "pagenumber": 8,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "U0QZZL",
+          "pagenumber": 9,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "5HEYEA",
+          "pagenumber": 10,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "TNSDSA",
+          "pagenumber": 11,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "JLJDRE",
+          "pagenumber": 12,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "HRWOMV",
+          "pagenumber": 13,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "ANH6SU",
+          "pagenumber": 14,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "B1MIA1",
+          "pagenumber": 15,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "MPSQDV",
+          "pagenumber": 16,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "WR7U61",
+          "pagenumber": 17,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "Q41CMX",
+          "pagenumber": 18,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "GWQJA6",
+          "pagenumber": 19,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "S4IIZ4",
+          "pagenumber": 20,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "U65WP1",
+          "pagenumber": 21,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "DGMAY5",
+          "pagenumber": 22,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "Y5CB6G",
+          "pagenumber": 23,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "TE8Y8G",
+          "pagenumber": 24,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "2SQ22N",
+          "pagenumber": 25,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "ZA42GG",
+          "pagenumber": 26,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "WAK4P6",
+          "pagenumber": 27,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "3M4LDG",
+          "pagenumber": 28,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "PDB69M",
+          "pagenumber": 29,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "02PDWG",
+          "pagenumber": 30,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "BJTEN2",
+          "pagenumber": 31,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "B5322T",
+          "pagenumber": 32,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "F1BM3R",
+          "pagenumber": 33,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "B1V4P8",
+          "pagenumber": 34,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "3ZKL29",
+          "pagenumber": 35,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "3H5JKZ",
+          "pagenumber": 36,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "DH5WO2",
+          "pagenumber": 37,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "EGO5Y8",
+          "pagenumber": 38,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "6M98LZ",
+          "pagenumber": 39,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "SDRU1B",
+          "pagenumber": 40,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "CN9TP9",
+          "pagenumber": 41,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "7JT1N2",
+          "pagenumber": 42,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "0QDGX2",
+          "pagenumber": 43,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "Z1M2JT",
+          "pagenumber": 44,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "XZ6GNJ",
+          "pagenumber": 45,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "ZNILF2",
+          "pagenumber": 46,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "U4P7IB",
+          "pagenumber": 47,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "KV8KPL",
+          "pagenumber": 48,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "63RJVO",
+          "pagenumber": 49,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "2JHI65",
+          "pagenumber": 50,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
         }
       ],
       "verification": {
@@ -169,12 +569,492 @@
   ],
   "sketch": [
     {
-      "sketchid": "123456",
-      "title": "[NAME]",
-      "description": "[DESCRIPTION]",
-      "notes": "[NOTES]",
+      "sketchid": "C2G53I",
+      "title": "The new became the old",
+      "description": "Regardless how perfect the new is, it becomes the old even faster.",
+      "notes": "This was the first idea sketch starting my entire desire into a journey of artistic expression.",
       "verification": {
-        "whathashed": "SCH-123456.webp",
+        "whathashed": "SCH-C2G53I.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "ZN7GOH",
+      "title": "Commentary Page",
+      "description": "Thoughts",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-ZN7GOH.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "U6MDG6",
+      "title": "First foot scketch",
+      "description": "An attempt",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-U6MDG6.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "H6I9D4",
+      "title": "Commentary Page",
+      "description": "Thoughts",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-H6I9D4.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "QCVSLX",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-QCVSLX.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "SCM12C",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-SCM12C.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "A6FCK0",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-A6FCK0.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "AX429Q",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-AX429Q.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "SSCSWK",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-SSCSWK.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "UR8MSK",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-UR8MSK.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "S3K94O",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-S3K94O.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "Y1ZJU2",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-Y1ZJU2.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "1ZDAK9",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-1ZDAK9.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "0U6NRO",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-0U6NRO.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "YK7SLN",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-YK7SLN.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "PS8KW0",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-PS8KW0.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "A8DSLM",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-A8DSLM.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "T08VRQ",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-T08VRQ.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "0QUCKA",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-0QUCKA.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "PBW18E",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-PBW18E.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "R1BJXD",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-R1BJXD.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "PIV0JN",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-PIV0JN.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "N3P8IK",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-N3P8IK.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "FEX5QG",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-FEX5QG.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "7P0CHH",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-7P0CHH.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "DLE75B",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-DLE75B.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "EQDW2J",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-EQDW2J.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "41AY33",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-41AY33.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "K6QR4L",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-K6QR4L.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "JQD8PN",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-JQD8PN.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "AKU36R",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-AKU36R.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "HGXVLP",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-HGXVLP.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "9BV0HL",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-9BV0HL.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "FUAH0B",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-FUAH0B.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "KRQJUS",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-KRQJUS.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "6HK4DU",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-6HK4DU.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "KNNI18",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-KNNI18.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "ABGKDL",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-ABGKDL.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "AU0XZL",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-AU0XZL.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "J9VAQE",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-J9VAQE.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "0UAVU6",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-0UAVU6.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "I8J9YP",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-I8J9YP.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "9Z78TB",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-9Z78TB.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "DIHFJT",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-DIHFJT.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "GBPU4M",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-GBPU4M.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "5MA3MO",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-5MA3MO.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "2V3DP3",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-2V3DP3.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "B2YI6Y",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-B2YI6Y.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "CIV0AY",
+      "title": "",
+      "description": "",
+      "notes": "None",
+      "verification": {
+        "whathashed": "SCH-CIV0AY.webp",
         "sha256": "[HASH]"
       }
     }
@@ -207,6 +1087,7 @@
       "poemid": "123456",
       "title": "[TITLE]",
       "description": "[DESCRIPTION]",
+      "rawContent": "[RAW CONTENT]",
       "verification": {
         "whathashed": "POE-123456.md",
         "sha256": "[HASH]"
@@ -295,6 +1176,18 @@
       "verification": {
         "whathashed": "EMO-123456.md",
         "sha256": "[HASH]"
+      }
+    }
+  ],
+  "blogpost": [
+    {
+      "blogid": "OBY3KK",
+      "title": "My Personal Public Void",
+      "description": "Too much honesty, honesty ill regret sharing with the world.",
+      "timestamp": "2025-04-28T00:00:00Z",
+      "verification": {
+        "whathashed": "BLO-OBY3KK.md",
+        "sha256": "489431eca651a1001c362e95cc25b230c11825bd3c1094f87d14c62fe609b760"
       }
     }
   ]

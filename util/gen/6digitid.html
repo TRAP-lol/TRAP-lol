@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ID GENERATOR</title>
+    <style>
+      :root {
+        --blood: #3a0000;
+        --flesh: #ffe5e5;
+        --black: #0a0a0a;
+        --ease: cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      body {
+        background: var(--black);
+        color: var(--flesh);
+        font-family: "Courier Prime", monospace;
+        min-height: 100vh;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .generator-altar {
+        text-align: center;
+        padding: 2rem;
+        border: 3px solid var(--blood);
+        background: rgba(58, 0, 0, 0.1);
+      }
+
+      .blood-id-display {
+        font-size: 3rem;
+        letter-spacing: 0.5rem;
+        margin: 2rem 0;
+        color: var(--blood);
+      }
+
+      .blood-button {
+        background: var(--blood);
+        color: var(--flesh);
+        border: none;
+        padding: 1rem 2rem;
+        cursor: pointer;
+        font-size: 1.2rem;
+        transition: all 0.3s var(--ease);
+      }
+
+      .blood-button:hover {
+        filter: brightness(130%);
+      }
+
+      .status-message {
+        margin-top: 1rem;
+        color: var(--blood);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="generator-altar">
+      <h1>ID GENERATOR</h1>
+      <div class="blood-id-display" id="bloodId">------</div>
+      <button class="blood-button" onclick="generateUniqueId()">
+        Summon New ID
+      </button>
+      <div class="status-message" id="status"></div>
+    </div>
+
+    <script>
+      const BLOOD_CHARS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      let verificationData = {};
+
+      // Load verification data on startup
+      async function loadBloodCovenant() {
+        try {
+          const response = await fetch("/public/data/verification.json");
+          verificationData = await response.json();
+          document.getElementById("status").textContent =
+            "Covenant loaded successfully";
+        } catch (error) {
+          document.getElementById("status").textContent =
+            "Blood covenant corrupted - offline mode";
+        }
+      }
+
+      function generateBaseId() {
+        const array = new Uint32Array(6);
+        crypto.getRandomValues(array);
+        return Array.from(array)
+          .map((value) => BLOOD_CHARS[value % BLOOD_CHARS.length])
+          .join("");
+      }
+
+      function isIdUnique(id) {
+        const idFields = [
+          "textid",
+          "emotionid",
+          "sketchid",
+          "inspirationid",
+          "noiseid",
+          "poemid",
+          "sentenceid",
+          "sketchbookid",
+          "certificateid",
+          "attachmentId",
+          "postid",
+          "blogid"
+        ];
+
+        return !Object.values(verificationData).some((artifactType) => {
+          return (
+            Array.isArray(artifactType) &&
+            artifactType.some((item) => {
+              return idFields.some((field) => {
+                const value = item[field];
+                if (!value) return false;
+
+                if (Array.isArray(value)) {
+                  return value.some((element) => String(element).endsWith(id));
+                }
+
+                return String(value).endsWith(id);
+              });
+            })
+          );
+        });
+      }
+
+      async function generateUniqueId() {
+        document.getElementById("status").textContent =
+          "Consulting the blood covenant...";
+
+        let attempts = 0;
+        let newId;
+
+        do {
+          newId = generateBaseId();
+          attempts++;
+
+          if (attempts > 1000) {
+            document.getElementById("status").textContent =
+              "Blood ritual failed - try again";
+            return;
+          }
+        } while (!isIdUnique(newId));
+
+        document.getElementById("bloodId").textContent = newId;
+        document.getElementById(
+          "status"
+        ).textContent = `ID sanctified after ${attempts} ${
+          attempts === 1 ? "attempt" : "attempts"
+        }`;
+      }
+
+      // Initialize
+      loadBloodCovenant();
+    </script>
+  </body>
+</html>

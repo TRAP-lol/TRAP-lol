@@ -347,6 +347,7 @@
         CER: "certificate",
         ATT: "attachment",
         SMP: "socialmediapost",
+        BLO: "blogpost",
       };
 
       const ID_FIELD_MAP = {
@@ -361,6 +362,7 @@
         certificate: "certificateid",
         attachment: "attachmentId",
         socialmediapost: "postid",
+        blogpost: "blogid",
       };
 
       const BLOOD_CHARS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -409,6 +411,7 @@
           attachment: "attachmentdirectory",
           socialmediapost: "socialmediapostdirectory",
           audio: "poemaudiodirectory",
+          blogpost: "blogpostdirectory",
         };
 
         const directory = verificationData.default?.[directoryMap[type]] || "";
@@ -627,6 +630,32 @@
                     `;
             break;
 
+          case "blogpost":
+            content += `
+                        <div class="artifact-content">
+                            <div class="artifact-meta">
+                                <div class="meta-item"><span class="meta-label">Posted:</span>${new Date(
+                                  artifact.timestamp
+                                ).toLocaleString()}</div>
+                                <div class="meta-item"><span class="meta-label">ID:</span>BLO-${
+                                  artifact.blogid
+                                }</div>
+                                <div class="meta-item"><span class="meta-label">File:</span><a href="${filePath}" class="blood-link" target="_blank">View Original</a></div>
+                            </div>
+                            <div class="text-content">${
+                              artifact.description
+                            }</div>
+                            <button 
+                            class="verify-button" 
+                            type="button" 
+                            onclick="location.href='/void/#BLO-${artifact.blogid}'" 
+                            data-id="${artifact.blogid}">
+                                DEEP DIVE
+                            </button>
+                        </div>
+                    `;
+            break;
+
           default:
             content += `
                         <div class="artifact-content">
@@ -655,11 +684,6 @@
                     <div class="tech-item">Verification Hash: <code>${
                       verification.sha256 || "HASH_UNAVAILABLE"
                     }</code></div>
-                    <div class="tech-item">Validation Protocol: ${
-                      verificationData.meta?.verificationmeta?.hashingProtocols[
-                        type
-                      ] || "Unknown"
-                    }</div>
                 </div>
             `;
 
