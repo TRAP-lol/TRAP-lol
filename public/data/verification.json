@@ -153,7 +153,8 @@
     "socialmediadirectory": "/resources/socialmedia/",
     "textdirectory": "/resources/text/",
     "qrdirectory": "/resources/verify/",
-    "blogpostdirectory": "/resources/blog/"
+    "blogpostdirectory": "/resources/blog/",
+    "linkurl": "https://share.trap.lol/api/shares/"
   },
   "sketchbook": [
     {
@@ -187,7 +188,7 @@
         {
           "pageid": "E76Y06",
           "pagenumber": 4,
-          "sketchid": "",
+          "sketchid": "H6I9D4",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -195,7 +196,7 @@
         {
           "pageid": "JD7WCC",
           "pagenumber": 5,
-          "sketchid": "",
+          "sketchid": "QCVSLX",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -203,7 +204,7 @@
         {
           "pageid": "JBINNY",
           "pagenumber": 6,
-          "sketchid": "",
+          "sketchid": "SCM12C",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -211,7 +212,7 @@
         {
           "pageid": "2150AD",
           "pagenumber": 7,
-          "sketchid": "",
+          "sketchid": "A6FCK0",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -219,7 +220,7 @@
         {
           "pageid": "1AGQ2D",
           "pagenumber": 8,
-          "sketchid": "",
+          "sketchid": "AX429Q",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -227,7 +228,7 @@
         {
           "pageid": "U0QZZL",
           "pagenumber": 9,
-          "sketchid": "",
+          "sketchid": "SSCSWK",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -235,7 +236,7 @@
         {
           "pageid": "5HEYEA",
           "pagenumber": 10,
-          "sketchid": "",
+          "sketchid": "UR8MSK",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -243,7 +244,7 @@
         {
           "pageid": "TNSDSA",
           "pagenumber": 11,
-          "sketchid": "",
+          "sketchid": "S3K94O",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -251,7 +252,7 @@
         {
           "pageid": "JLJDRE",
           "pagenumber": 12,
-          "sketchid": "",
+          "sketchid": "Y1ZJU2",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -259,7 +260,7 @@
         {
           "pageid": "HRWOMV",
           "pagenumber": 13,
-          "sketchid": "",
+          "sketchid": "1ZDAK9",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -267,7 +268,7 @@
         {
           "pageid": "ANH6SU",
           "pagenumber": 14,
-          "sketchid": "",
+          "sketchid": "0U6NRO",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -275,7 +276,7 @@
         {
           "pageid": "B1MIA1",
           "pagenumber": 15,
-          "sketchid": "",
+          "sketchid": "YK7SLN",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -283,7 +284,7 @@
         {
           "pageid": "MPSQDV",
           "pagenumber": 16,
-          "sketchid": "",
+          "sketchid": "PS8KW0",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -291,7 +292,7 @@
         {
           "pageid": "WR7U61",
           "pagenumber": 17,
-          "sketchid": "",
+          "sketchid": "A8DSLM",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -299,7 +300,7 @@
         {
           "pageid": "Q41CMX",
           "pagenumber": 18,
-          "sketchid": "",
+          "sketchid": "T08VRQ",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -307,7 +308,7 @@
         {
           "pageid": "GWQJA6",
           "pagenumber": 19,
-          "sketchid": "",
+          "sketchid": "0QUCKA",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -315,7 +316,7 @@
         {
           "pageid": "S4IIZ4",
           "pagenumber": 20,
-          "sketchid": "",
+          "sketchid": "PBW18E",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -323,7 +324,7 @@
         {
           "pageid": "U65WP1",
           "pagenumber": 21,
-          "sketchid": "",
+          "sketchid": "R1BJXD",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -331,7 +332,7 @@
         {
           "pageid": "DGMAY5",
           "pagenumber": 22,
-          "sketchid": "",
+          "sketchid": "PIV0JN",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -339,7 +340,7 @@
         {
           "pageid": "Y5CB6G",
           "pagenumber": 23,
-          "sketchid": "",
+          "sketchid": "N3P8IK",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -347,7 +348,7 @@
         {
           "pageid": "TE8Y8G",
           "pagenumber": 24,
-          "sketchid": "",
+          "sketchid": "FEX5QG",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -355,7 +356,7 @@
         {
           "pageid": "2SQ22N",
           "pagenumber": 25,
-          "sketchid": "",
+          "sketchid": "7P0CHH",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -363,7 +364,7 @@
         {
           "pageid": "ZA42GG",
           "pagenumber": 26,
-          "sketchid": "",
+          "sketchid": "DLE75B",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -371,7 +372,7 @@
         {
           "pageid": "WAK4P6",
           "pagenumber": 27,
-          "sketchid": "",
+          "sketchid": "EQDW2J",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -379,7 +380,7 @@
         {
           "pageid": "3M4LDG",
           "pagenumber": 28,
-          "sketchid": "",
+          "sketchid": "41AY33",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -387,7 +388,7 @@
         {
           "pageid": "PDB69M",
           "pagenumber": 29,
-          "sketchid": "",
+          "sketchid": "K6QR4L",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -411,7 +412,7 @@
         {
           "pageid": "B5322T",
           "pagenumber": 32,
-          "sketchid": "",
+          "sketchid": "HGXVLP",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -419,7 +420,7 @@
         {
           "pageid": "F1BM3R",
           "pagenumber": 33,
-          "sketchid": "",
+          "sketchid": "9BV0HL",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -427,7 +428,7 @@
         {
           "pageid": "B1V4P8",
           "pagenumber": 34,
-          "sketchid": "",
+          "sketchid": "FUAH0B",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -435,7 +436,7 @@
         {
           "pageid": "3ZKL29",
           "pagenumber": 35,
-          "sketchid": "",
+          "sketchid": "KRQJUS",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -443,7 +444,7 @@
         {
           "pageid": "3H5JKZ",
           "pagenumber": 36,
-          "sketchid": "",
+          "sketchid": "6HK4DU",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -451,7 +452,7 @@
         {
           "pageid": "DH5WO2",
           "pagenumber": 37,
-          "sketchid": "",
+          "sketchid": "KNNI18",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -459,7 +460,7 @@
         {
           "pageid": "EGO5Y8",
           "pagenumber": 38,
-          "sketchid": "",
+          "sketchid": "ABGKDL",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -467,7 +468,7 @@
         {
           "pageid": "6M98LZ",
           "pagenumber": 39,
-          "sketchid": "",
+          "sketchid": "AU0XZL",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -475,7 +476,7 @@
         {
           "pageid": "SDRU1B",
           "pagenumber": 40,
-          "sketchid": "",
+          "sketchid": "J9VAQE",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -483,7 +484,7 @@
         {
           "pageid": "CN9TP9",
           "pagenumber": 41,
-          "sketchid": "",
+          "sketchid": "0UAVU6",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -491,7 +492,7 @@
         {
           "pageid": "7JT1N2",
           "pagenumber": 42,
-          "sketchid": "",
+          "sketchid": "I8J9YP",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -499,7 +500,7 @@
         {
           "pageid": "0QDGX2",
           "pagenumber": 43,
-          "sketchid": "",
+          "sketchid": "9Z78TB",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -507,7 +508,7 @@
         {
           "pageid": "Z1M2JT",
           "pagenumber": 44,
-          "sketchid": "",
+          "sketchid": "DIHFJT",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -515,7 +516,7 @@
         {
           "pageid": "XZ6GNJ",
           "pagenumber": 45,
-          "sketchid": "",
+          "sketchid": "GBPU4M",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -523,7 +524,7 @@
         {
           "pageid": "ZNILF2",
           "pagenumber": 46,
-          "sketchid": "",
+          "sketchid": "5MA3MO",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -531,7 +532,7 @@
         {
           "pageid": "U4P7IB",
           "pagenumber": 47,
-          "sketchid": "",
+          "sketchid": "2V3DP3",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -539,7 +540,7 @@
         {
           "pageid": "KV8KPL",
           "pagenumber": 48,
-          "sketchid": "",
+          "sketchid": "B2YI6Y",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -547,15 +548,7 @@
         {
           "pageid": "63RJVO",
           "pagenumber": 49,
-          "sketchid": "",
-          "verification": {
-            "sha256": "[HASH]"
-          }
-        },
-        {
-          "pageid": "2JHI65",
-          "pagenumber": 50,
-          "sketchid": "",
+          "sketchid": "CIV0AY",
           "verification": {
             "sha256": "[HASH]"
           }
@@ -573,6 +566,7 @@
       "title": "The new became the old",
       "description": "Regardless how perfect the new is, it becomes the old even faster.",
       "notes": "This was the first idea sketch starting my entire desire into a journey of artistic expression.",
+      "linkid": "2QOPAX0LTUBoCvoS/files/177a626d-c08e-4589-a182-11a4828d69f3?download=false",
       "verification": {
         "whathashed": "SCH-C2G53I.webp",
         "sha256": "[HASH]"
@@ -583,6 +577,7 @@
       "title": "Commentary Page",
       "description": "Thoughts",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/ca0b4e12-bb3a-4f70-a401-b85328c67aac?download=false",
       "verification": {
         "whathashed": "SCH-ZN7GOH.webp",
         "sha256": "[HASH]"
@@ -591,8 +586,9 @@
     {
       "sketchid": "U6MDG6",
       "title": "First foot scketch",
-      "description": "An attempt",
-      "notes": "None",
+      "description": "An attempt at sketching a foot",
+      "notes": "Nails are not always perfectly shaped, they kind of cave inwards",
+      "linkid": "2QOPAX0LTUBoCvoS/files/4719e12b-b3a0-4de8-8da4-82fd472d7af9?download=false",
       "verification": {
         "whathashed": "SCH-U6MDG6.webp",
         "sha256": "[HASH]"
@@ -602,7 +598,8 @@
       "sketchid": "H6I9D4",
       "title": "Commentary Page",
       "description": "Thoughts",
-      "notes": "None",
+      "notes": "Tool options for removing a toe-nail",
+      "linkid": "2QOPAX0LTUBoCvoS/files/1f07189e-df0d-4637-850d-344e1b96d0e1?download=false",
       "verification": {
         "whathashed": "SCH-H6I9D4.webp",
         "sha256": "[HASH]"
@@ -610,9 +607,10 @@
     },
     {
       "sketchid": "QCVSLX",
-      "title": "",
-      "description": "",
-      "notes": "None",
+      "title": "A Hemostat",
+      "description": "Test drawing of a hemostat for toe-nail removal",
+      "notes": "Metal shine will take time to learn",
+      "linkid": "2QOPAX0LTUBoCvoS/files/8a13f8c7-bef2-461d-993b-099ab7fa3ccd?download=false",
       "verification": {
         "whathashed": "SCH-QCVSLX.webp",
         "sha256": "[HASH]"
@@ -620,9 +618,10 @@
     },
     {
       "sketchid": "SCM12C",
-      "title": "",
-      "description": "",
+      "title": "Empty Page",
+      "description": "Intentionally left empty",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/9d26efb5-4cdb-45eb-bcd7-4817ea728aae?download=false",
       "verification": {
         "whathashed": "SCH-SCM12C.webp",
         "sha256": "[HASH]"
@@ -630,9 +629,10 @@
     },
     {
       "sketchid": "A6FCK0",
-      "title": "",
-      "description": "",
+      "title": "Feet with Toe-nails",
+      "description": "Expanding on feet and toe-nails, as well as how the removal of a toe-nail would look",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/662b2efc-699e-44c1-986a-8da33020eb19?download=false",
       "verification": {
         "whathashed": "SCH-A6FCK0.webp",
         "sha256": "[HASH]"
@@ -640,9 +640,10 @@
     },
     {
       "sketchid": "AX429Q",
-      "title": "",
-      "description": "",
+      "title": "Empty Page",
+      "description": "Intentionally left empty",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/af8478ab-34b9-49f0-98b0-66bca0f2adcf?download=false",
       "verification": {
         "whathashed": "SCH-AX429Q.webp",
         "sha256": "[HASH]"
@@ -650,9 +651,10 @@
     },
     {
       "sketchid": "SSCSWK",
-      "title": "",
-      "description": "",
+      "title": "Hurt Ballerina Foot",
+      "description": "Attempts at sketching a ballerina foot that has damage and bruising",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/e495abdb-1ae4-4a93-b6f8-89869928713f?download=false",
       "verification": {
         "whathashed": "SCH-SSCSWK.webp",
         "sha256": "[HASH]"
@@ -660,9 +662,10 @@
     },
     {
       "sketchid": "UR8MSK",
-      "title": "",
-      "description": "",
+      "title": "Commentary Page",
+      "description": "Thoughts",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/b2896ef7-75f0-4fe1-ae4b-5cb9c93dc3f6?download=false",
       "verification": {
         "whathashed": "SCH-UR8MSK.webp",
         "sha256": "[HASH]"
@@ -670,9 +673,10 @@
     },
     {
       "sketchid": "S3K94O",
-      "title": "",
-      "description": "",
+      "title": "Ballerina Foot pointed with no shoe",
+      "description": "Attempt to sketch a ballerina foot that is pointed without a shoe, focusing on the toes and the arch and skin folds",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/a0828209-e18c-4d9d-9e66-f915fab6bf24?download=false",
       "verification": {
         "whathashed": "SCH-S3K94O.webp",
         "sha256": "[HASH]"
@@ -680,9 +684,10 @@
     },
     {
       "sketchid": "Y1ZJU2",
-      "title": "",
-      "description": "",
+      "title": "Commentary Page",
+      "description": "Thoughts",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/c9a00ef3-0d86-420e-a9c4-f52c21f0db45?download=false",
       "verification": {
         "whathashed": "SCH-Y1ZJU2.webp",
         "sha256": "[HASH]"
@@ -690,9 +695,10 @@
     },
     {
       "sketchid": "1ZDAK9",
-      "title": "",
-      "description": "",
+      "title": "Ballerina Foot in a ballerina shoe",
+      "description": "Attempt at getting the shape and structure of a ballerina foot in a shoe",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/e1eeeab1-1953-45cf-9acf-89742400f897?download=false",
       "verification": {
         "whathashed": "SCH-1ZDAK9.webp",
         "sha256": "[HASH]"
@@ -700,9 +706,10 @@
     },
     {
       "sketchid": "0U6NRO",
-      "title": "",
-      "description": "",
+      "title": "Commentary Page",
+      "description": "Thoughts",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/0eb55474-b294-4934-86cb-cf9bb9a70839?download=false",
       "verification": {
         "whathashed": "SCH-0U6NRO.webp",
         "sha256": "[HASH]"
@@ -710,9 +717,10 @@
     },
     {
       "sketchid": "YK7SLN",
-      "title": "",
-      "description": "",
-      "notes": "None",
+      "title": "Fun Feet",
+      "description": "A sketch of two feet",
+      "notes": "One of my favourite sketches",
+      "linkid": "2QOPAX0LTUBoCvoS/files/1de57b09-4b82-481d-99c5-c4709351a8d1?download=false",
       "verification": {
         "whathashed": "SCH-YK7SLN.webp",
         "sha256": "[HASH]"
@@ -720,9 +728,10 @@
     },
     {
       "sketchid": "PS8KW0",
-      "title": "",
-      "description": "",
+      "title": "Commentary Page",
+      "description": "Thoughts",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/21d43730-2c7f-4a6e-bb37-82e13e451b5e?download=false",
       "verification": {
         "whathashed": "SCH-PS8KW0.webp",
         "sha256": "[HASH]"
@@ -730,9 +739,10 @@
     },
     {
       "sketchid": "A8DSLM",
-      "title": "",
-      "description": "",
-      "notes": "None",
+      "title": "First Eye",
+      "description": "A horrible sketch of a persons eye",
+      "notes": "Eyes are difficult to draw",
+      "linkid": "2QOPAX0LTUBoCvoS/files/710b3aed-5302-4674-bafd-4bffc52e9e64?download=false",
       "verification": {
         "whathashed": "SCH-A8DSLM.webp",
         "sha256": "[HASH]"
@@ -740,9 +750,10 @@
     },
     {
       "sketchid": "T08VRQ",
-      "title": "",
-      "description": "",
+      "title": "Commentary Page",
+      "description": "Thoughts",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/c58ba5db-08f0-4ef0-9e0c-346527081386?download=false",
       "verification": {
         "whathashed": "SCH-T08VRQ.webp",
         "sha256": "[HASH]"
@@ -750,9 +761,10 @@
     },
     {
       "sketchid": "0QUCKA",
-      "title": "",
-      "description": "",
+      "title": "Another Foot",
+      "description": "More attempts at sketching a foot",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/01775cfa-edd2-48d1-833c-f9beaf81e505?download=false",
       "verification": {
         "whathashed": "SCH-0QUCKA.webp",
         "sha256": "[HASH]"
@@ -760,9 +772,10 @@
     },
     {
       "sketchid": "PBW18E",
-      "title": "",
-      "description": "",
+      "title": "Commentary Page",
+      "description": "Thoughts",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/64abf969-2e93-4ee1-ad1b-c0090323db87?download=false",
       "verification": {
         "whathashed": "SCH-PBW18E.webp",
         "sha256": "[HASH]"
@@ -770,9 +783,10 @@
     },
     {
       "sketchid": "R1BJXD",
-      "title": "",
-      "description": "",
+      "title": "Two feet with legs attached",
+      "description": "A ballerina stretching out her feet, only showing the feet",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/8edb9bd0-82f8-498c-b88c-a23dd5d585ed?download=false",
       "verification": {
         "whathashed": "SCH-R1BJXD.webp",
         "sha256": "[HASH]"
@@ -780,9 +794,10 @@
     },
     {
       "sketchid": "PIV0JN",
-      "title": "",
-      "description": "",
+      "title": "Commentary Page",
+      "description": "Thoughts",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/a929cf3f-33be-49f5-995c-9b0beb86cc13?download=false",
       "verification": {
         "whathashed": "SCH-PIV0JN.webp",
         "sha256": "[HASH]"
@@ -790,9 +805,10 @@
     },
     {
       "sketchid": "N3P8IK",
-      "title": "",
-      "description": "",
+      "title": "A battling ballerina",
+      "description": "A ballerina laying on the floor, contemplating her life",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/01164d27-67d8-464e-b56a-433d182791d7?download=false",
       "verification": {
         "whathashed": "SCH-N3P8IK.webp",
         "sha256": "[HASH]"
@@ -800,9 +816,10 @@
     },
     {
       "sketchid": "FEX5QG",
-      "title": "",
-      "description": "",
+      "title": "Commentary Page",
+      "description": "Thoughts",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/bd5acfe2-a75e-474d-94d9-2159629bef5b?download=false",
       "verification": {
         "whathashed": "SCH-FEX5QG.webp",
         "sha256": "[HASH]"
@@ -810,9 +827,10 @@
     },
     {
       "sketchid": "7P0CHH",
-      "title": "",
-      "description": "",
+      "title": "Two touching feet",
+      "description": "An attempt at shading feet correctly",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/0112e6bb-f7df-403d-9e9d-ed3f41375f8a?download=false",
       "verification": {
         "whathashed": "SCH-7P0CHH.webp",
         "sha256": "[HASH]"
@@ -820,9 +838,10 @@
     },
     {
       "sketchid": "DLE75B",
-      "title": "",
-      "description": "",
+      "title": "Commentary Page",
+      "description": "Thoughts",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/2eea8a88-11cf-4297-8787-482f6b3ebe19?download=false",
       "verification": {
         "whathashed": "SCH-DLE75B.webp",
         "sha256": "[HASH]"
@@ -830,9 +849,10 @@
     },
     {
       "sketchid": "EQDW2J",
-      "title": "",
-      "description": "",
+      "title": "Two Feet in different states",
+      "description": "Two feet, one in a ballerina shoe and one not",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/cf08faad-1399-49e1-abb1-6b6b888bdb9a?download=false",
       "verification": {
         "whathashed": "SCH-EQDW2J.webp",
         "sha256": "[HASH]"
@@ -840,9 +860,10 @@
     },
     {
       "sketchid": "41AY33",
-      "title": "",
-      "description": "",
+      "title": "Empty Page",
+      "description": "Intentionally left empty",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/ebbd8b54-5b8f-45d7-8629-d7770e369e75?download=false",
       "verification": {
         "whathashed": "SCH-41AY33.webp",
         "sha256": "[HASH]"
@@ -850,9 +871,10 @@
     },
     {
       "sketchid": "K6QR4L",
-      "title": "",
-      "description": "",
+      "title": "Commentary Page",
+      "description": "Thoughts",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/03284f1e-dc0e-45d5-9713-ad3db1339fc0?download=false",
       "verification": {
         "whathashed": "SCH-K6QR4L.webp",
         "sha256": "[HASH]"
@@ -863,6 +885,7 @@
       "title": "",
       "description": "",
       "notes": "None",
+      "linkid": "",
       "verification": {
         "whathashed": "SCH-JQD8PN.webp",
         "sha256": "[HASH]"
@@ -873,6 +896,7 @@
       "title": "",
       "description": "",
       "notes": "None",
+      "linkid": "",
       "verification": {
         "whathashed": "SCH-AKU36R.webp",
         "sha256": "[HASH]"
@@ -880,9 +904,10 @@
     },
     {
       "sketchid": "HGXVLP",
-      "title": "",
-      "description": "",
+      "title": "Empty Page",
+      "description": "Intentionally left empty",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/891032cd-c76f-4a43-9c4a-ca8eaaf0c7ee?download=false",
       "verification": {
         "whathashed": "SCH-HGXVLP.webp",
         "sha256": "[HASH]"
@@ -890,9 +915,10 @@
     },
     {
       "sketchid": "9BV0HL",
-      "title": "",
-      "description": "",
+      "title": "Hiding yourself",
+      "description": "Needed a profile picture, and ended up with this",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/f396f2a4-0f39-49b3-82d0-462f02908a4d?download=false",
       "verification": {
         "whathashed": "SCH-9BV0HL.webp",
         "sha256": "[HASH]"
@@ -900,9 +926,10 @@
     },
     {
       "sketchid": "FUAH0B",
-      "title": "",
-      "description": "",
+      "title": "Commentary Page",
+      "description": "Thoughts",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/b9049f9a-9a8e-44be-8dff-af1dc819ee98?download=false",
       "verification": {
         "whathashed": "SCH-FUAH0B.webp",
         "sha256": "[HASH]"
@@ -910,9 +937,10 @@
     },
     {
       "sketchid": "KRQJUS",
-      "title": "",
-      "description": "",
+      "title": "Empty Page",
+      "description": "Intentionally left empty",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/2aab0b1a-2537-4791-9d23-0e01cea0207d?download=false",
       "verification": {
         "whathashed": "SCH-KRQJUS.webp",
         "sha256": "[HASH]"
@@ -920,9 +948,10 @@
     },
     {
       "sketchid": "6HK4DU",
-      "title": "",
-      "description": "",
+      "title": "Empty Page",
+      "description": "Intentionally left empty",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/17a00bef-f267-4fca-89e0-14bf4e5fb8f8?download=false",
       "verification": {
         "whathashed": "SCH-6HK4DU.webp",
         "sha256": "[HASH]"
@@ -930,9 +959,10 @@
     },
     {
       "sketchid": "KNNI18",
-      "title": "",
-      "description": "",
+      "title": "Auto Ballerina Legs",
+      "description": "Wanted to do the whole body, but proportioning is hard",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/614bafe0-51cf-4e92-be1f-300441e15a8c?download=false",
       "verification": {
         "whathashed": "SCH-KNNI18.webp",
         "sha256": "[HASH]"
@@ -940,9 +970,10 @@
     },
     {
       "sketchid": "ABGKDL",
-      "title": "",
-      "description": "",
+      "title": "Commentary Page",
+      "description": "Thoughts",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/57219e00-1cc2-4b0c-b5ea-098a205a6bbb?download=false",
       "verification": {
         "whathashed": "SCH-ABGKDL.webp",
         "sha256": "[HASH]"
@@ -950,9 +981,10 @@
     },
     {
       "sketchid": "AU0XZL",
-      "title": "",
-      "description": "",
+      "title": "Auto Ballerina Body",
+      "description": "Wanted to do the entire top half of the body, but proportioning is hard",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/0711660f-18ce-4c82-b497-aab9a0ba4a27?download=false",
       "verification": {
         "whathashed": "SCH-AU0XZL.webp",
         "sha256": "[HASH]"
@@ -960,9 +992,10 @@
     },
     {
       "sketchid": "J9VAQE",
-      "title": "",
-      "description": "",
+      "title": "Commentary Page",
+      "description": "Thoughts",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/3789b88b-312e-4273-a9b6-39c26f92879c?download=false",
       "verification": {
         "whathashed": "SCH-J9VAQE.webp",
         "sha256": "[HASH]"
@@ -970,9 +1003,10 @@
     },
     {
       "sketchid": "0UAVU6",
-      "title": "",
-      "description": "",
+      "title": "Ballerina Back",
+      "description": "A ballerina leaning forward with her back arched",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/01ea66c8-fe14-4e5d-b05c-4e0d65dda5c4?download=false",
       "verification": {
         "whathashed": "SCH-0UAVU6.webp",
         "sha256": "[HASH]"
@@ -980,9 +1014,10 @@
     },
     {
       "sketchid": "I8J9YP",
-      "title": "",
-      "description": "",
+      "title": "Commentary Page",
+      "description": "Thoughts",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/1079d675-d4a0-4913-a818-43bddb176761?download=false",
       "verification": {
         "whathashed": "SCH-I8J9YP.webp",
         "sha256": "[HASH]"
@@ -990,9 +1025,10 @@
     },
     {
       "sketchid": "9Z78TB",
-      "title": "",
-      "description": "",
+      "title": "The man in a skirt",
+      "description": "Got the whole body in but no real details worked out",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/742489e5-b705-4ec8-a39f-2e549b11de5c?download=false",
       "verification": {
         "whathashed": "SCH-9Z78TB.webp",
         "sha256": "[HASH]"
@@ -1000,9 +1036,10 @@
     },
     {
       "sketchid": "DIHFJT",
-      "title": "",
-      "description": "",
+      "title": "Self-Reflection",
+      "description": "Mumbling Mind",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/b49f6752-ada4-4eca-ab29-a3a70a015a1b?download=false",
       "verification": {
         "whathashed": "SCH-DIHFJT.webp",
         "sha256": "[HASH]"
@@ -1010,9 +1047,10 @@
     },
     {
       "sketchid": "GBPU4M",
-      "title": "",
-      "description": "",
+      "title": "Abnormal Ballerina Figure",
+      "description": "A ballerina moving her body odly",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/57f94b5a-4b7d-4b8f-86dd-59914520e995?download=false",
       "verification": {
         "whathashed": "SCH-GBPU4M.webp",
         "sha256": "[HASH]"
@@ -1020,9 +1058,10 @@
     },
     {
       "sketchid": "5MA3MO",
-      "title": "",
-      "description": "",
+      "title": "Too Careful",
+      "description": "An attempted sketch that turned into a mumbling mind",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/f4809bb8-13d1-4af0-9d4e-39ad6ccbbea4?download=false",
       "verification": {
         "whathashed": "SCH-5MA3MO.webp",
         "sha256": "[HASH]"
@@ -1030,9 +1069,10 @@
     },
     {
       "sketchid": "2V3DP3",
-      "title": "",
-      "description": "",
+      "title": "Bad Proportions",
+      "description": "I seem to duck out of drawing material",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/0a23e3aa-1c8b-4d85-a0b6-8d8dd7b5cb4d?download=false",
       "verification": {
         "whathashed": "SCH-2V3DP3.webp",
         "sha256": "[HASH]"
@@ -1040,9 +1080,10 @@
     },
     {
       "sketchid": "B2YI6Y",
-      "title": "",
-      "description": "",
+      "title": "Self-Reflection",
+      "description": "Mumbling Mind",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/1bdbe2e2-0df6-48c7-8c3a-2141b3e646f9?download=false",
       "verification": {
         "whathashed": "SCH-B2YI6Y.webp",
         "sha256": "[HASH]"
@@ -1050,9 +1091,10 @@
     },
     {
       "sketchid": "CIV0AY",
-      "title": "",
-      "description": "",
+      "title": "Backwards Ballerina",
+      "description": "A ballerina bending her back while holding a bar",
       "notes": "None",
+      "linkid": "2QOPAX0LTUBoCvoS/files/76860014-b9d2-485a-8c18-4543244c0544?download=false",
       "verification": {
         "whathashed": "SCH-CIV0AY.webp",
         "sha256": "[HASH]"
@@ -1065,6 +1107,7 @@
       "title": "[TITLE]",
       "description": "[DESCRIPTION]",
       "notes": "[NOTES]",
+      "linkid": "",
       "verification": {
         "whathashed": "INS-123456.webp",
         "sha256": "[HASH]"
@@ -1076,6 +1119,7 @@
       "noiseid": "123456",
       "title": "Carnival Of Flesh",
       "description": "[DESCRIPTION]",
+      "linkid": "",
       "validation": {
         "whathashed": "NSE-123456.webp",
         "sha256": "[HASH]"
@@ -1127,6 +1171,7 @@
       "audioid": "123456",
       "title": "[TITLE]",
       "description": "[DESCRIPTION]",
+      "linkid": "",
       "verification": {
         "whathashed": "POA-123456.flac",
         "sha256": "[HASH]"
@@ -1137,6 +1182,7 @@
     {
       "attachmentId": "123456",
       "description": "[DESCRIPTION]",
+      "linkid": "",
       "verification": {
         "whathashed": "ATT-123456.png",
         "sha256": "[HASH]"

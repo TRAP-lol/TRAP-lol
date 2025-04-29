@@ -531,7 +531,7 @@
           case "noise":
             content += `
                         <div class="media-container">
-                            <img src="${filePath}" class="artifact-image" alt="${
+                            <img src="${verificationData.default?.linkurl || ''}${artifact.linkid || ''}" class="artifact-image" alt="${
               artifact.description
             }">
                             <div class="artifact-meta">
@@ -558,7 +558,7 @@
           case "audio":
             content += `
                         <div class="artifact-content">
-                            <audio controls class="audio-player" src="${filePath}"></audio>
+                            <audio controls class="audio-player" src="${verificationData.default?.linkurl || ''}${artifact.linkid || ''}"></audio>
                             <div class="tech-specs">
                                 ${
                                   meta.duration
