@@ -1191,10 +1191,11 @@
   ],
   "socialmediapost": [
     {
-      "postid": "123456",
-      "original": "https://social.com/post/123",
-      "timestamp": "2025-04-24T00:00:00Z",
-      "attachments": ["EFGH23", "TSGQFR"],
+      "postid": "92SILE",
+      "title": "Mastodon Post",
+      "original": "https://mastodon.art/@traplol/114420169438135816",
+      "timestamp": "2025-04-29T00:00:00Z",
+      "attachments": [],
       "verification": {
         "whathashed": "SMP-123456.md",
         "sha256": "[HASH]"
