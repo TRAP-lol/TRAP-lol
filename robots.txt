@@ -11,4 +11,4 @@ Disallow: /verify/*
 Disallow: /resources/*
 Disallow: /util/*
 Disallow: /_config.yml
-Disallow: /blog/*
+Disallow: /void/*

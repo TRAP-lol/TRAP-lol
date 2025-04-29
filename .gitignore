@@ -1,2 +1,7 @@
 .vscode
-/resources/sketch/*
+/resources/sketch/
+/resources/audio/
+/resources/inspiration/
+/resources/sketchbook/
+/resources/attachment/
+/resources/verify/
