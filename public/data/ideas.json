@@ -1,0 +1,42 @@
+{
+  "tnc": "Everything in this doc is ideas and not representations of finality",
+  "meta": {
+    "totalideas": 0,
+    "lastmodified": ""
+  },
+  "defaults": {
+    "midprefix": "MID"
+  },
+  "idformats": {
+    "midformat": "MID-[A-Z0-9]{6}"
+  },
+  "ideas": [
+    {
+      "mid": "MID-L4EAN2",
+      "title": "",
+      "text": {
+        "coredescription": "",
+        "shortdescription": "",
+        "keypoints": ["", ""],
+        "importantnotes": ["", ""]
+      },
+      "emo": {
+        "rant": "",
+        "myengagedemotions": ["", ""]
+      },
+      "visual": {
+        "lookidea": "",
+        "importantvisualelements": ["", ""]
+      },
+      "related": {
+        "relatedids": ["", ""],
+        "urltraindata": ["", ""]
+      },
+      "accessibility": {
+        "alttext": "",
+        "tags": [],
+        "tw": []
+      }
+    }
+  ]
+}

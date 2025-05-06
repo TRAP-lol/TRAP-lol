@@ -552,6 +552,70 @@
           "verification": {
             "sha256": "[HASH]"
           }
+        },
+        {
+          "pageid": "8RFXL0",
+          "pagenumber": 50,
+          "sketchid": "81E25L",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "ZDUB4N",
+          "pagenumber": 51,
+          "sketchid": "Y5PKOZ",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "4DMG96",
+          "pagenumber": 52,
+          "sketchid": "",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "TF2O9N",
+          "pagenumber": 53,
+          "sketchid": "EI73N0",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "IKSSJM",
+          "pagenumber": 54,
+          "sketchid": "QENHIH",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "0EAAX9",
+          "pagenumber": 55,
+          "sketchid": "CG560R",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "QECJU8",
+          "pagenumber": 56,
+          "sketchid": "XDX9WV",
+          "verification": {
+            "sha256": "[HASH]"
+          }
+        },
+        {
+          "pageid": "U2VBRB",
+          "pagenumber": 57,
+          "sketchid": "RA4AR8",
+          "verification": {
+            "sha256": "[HASH]"
+          }
         }
       ],
       "verification": {
@@ -1099,6 +1163,72 @@
         "whathashed": "SCH-CIV0AY.webp",
         "sha256": "[HASH]"
       }
+    },
+    {
+      "sketchid": "Y5PKOZ",
+      "title": "Pillow Rena",
+      "description": "A ballerina apparently holding a pillow. Just supposed to have been sad.",
+      "notes": "None",
+      "linkid": "",
+      "verification": {
+        "whathashed": "SCH-Y5PKOZ.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "EI73N0",
+      "title": "Flexible Ballerina",
+      "description": "A ballerina stretching.",
+      "notes": "None",
+      "linkid": "",
+      "verification": {
+        "whathashed": "SCH-EI73N0.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "QENHIH",
+      "title": "Self-Reflection",
+      "description": "Mumbling Mind",
+      "notes": "None",
+      "linkid": "",
+      "verification": {
+        "whathashed": "SCH-QENHIH.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "CG560R",
+      "title": "Face Attempt",
+      "description": "A stone weeping angel statue, half-completed",
+      "notes": "None",
+      "linkid": "",
+      "verification": {
+        "whathashed": "SCH-CG560R.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "XDX9WV",
+      "title": "The Smoker, anime",
+      "description": "An attempt at anime smoker",
+      "notes": "None",
+      "linkid": "",
+      "verification": {
+        "whathashed": "SCH-XDX9WV.webp",
+        "sha256": "[HASH]"
+      }
+    },
+    {
+      "sketchid": "RA4AR8",
+      "title": "Even worse Smoker, anime",
+      "description": "The actual first attempt at anime, and absolutely horrid",
+      "notes": "None",
+      "linkid": "",
+      "verification": {
+        "whathashed": "SCH-RA4AR8.webp",
+        "sha256": "[HASH]"
+      }
     }
   ],
   "inspiration": [
@@ -1200,7 +1330,29 @@
         "whathashed": "SMP-123456.md",
         "sha256": "[HASH]"
       }
-    }
+    },
+    {
+        "postid": "MWDFQA",
+        "title": "Mastodon Post",
+        "original": "https://mastodon.art/@traplol/114421158199774416",
+        "timestamp": "2025-04-29T00:00:00Z",
+        "attachments": [],
+        "verification": {
+          "whathashed": "SMP-123456.md",
+          "sha256": "[HASH]"
+        }
+      },
+      {
+        "postid": "BUOK7H",
+        "title": "Mastodon Post",
+        "original": "https://mastodon.art/@traplol/114425281191576679",
+        "timestamp": "2025-04-30T00:00:00Z",
+        "attachments": [],
+        "verification": {
+          "whathashed": "SMP-123456.md",
+          "sha256": "[HASH]"
+        }
+      }
   ],
   "text": [
     {

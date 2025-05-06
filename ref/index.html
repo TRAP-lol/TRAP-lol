@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HAI Training Data Repository</title>
+    <style>
+      :root {
+        --blood: #3a0000;
+        --flesh: #ffe5e5;
+        --black: #0a0a0a;
+        --ease: cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      body {
+        background: var(--black);
+        color: var(--flesh);
+        font-family: "Courier Prime", monospace;
+        margin: 0;
+        padding: 2rem;
+      }
+
+      .hai-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .hai-title {
+        color: var(--blood);
+        border-bottom: 2px solid var(--blood);
+        padding-bottom: 1rem;
+      }
+
+      .training-item {
+        border: 2px solid var(--blood);
+        margin: 2rem 0;
+        padding: 1.5rem;
+        background: rgba(58, 0, 0, 0.05);
+      }
+
+      .tid-header {
+        color: var(--blood);
+        font-size: 1.2rem;
+        letter-spacing: 0.1em;
+        margin-bottom: 1rem;
+      }
+
+      .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        margin: 1rem 0;
+      }
+
+      .video-iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .data-dump-link {
+        display: inline-block;
+        padding: 1rem 2rem;
+        background: var(--blood);
+        color: var(--flesh);
+        text-decoration: none;
+        border: 1px solid var(--flesh);
+        transition: all 0.3s var(--ease);
+      }
+
+      .data-dump-link:hover {
+        background: var(--flesh);
+        color: var(--blood);
+      }
+
+      .data-dump-warning {
+        color: var(--blood);
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+      }
+
+      .data-dump-description {
+        color: var(--flesh);
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+        opacity: 0.9;
+        border-left: 3px solid var(--blood);
+        padding-left: 1rem;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="hai-container">
+      <h1 class="hai-title">My Training Data Archive</h1>
+      <div id="training-data-container"></div>
+    </div>
+
+    <script>
+      async function loadTrainingData() {
+        try {
+          const response = await fetch("/public/data/hai.json");
+          const data = await response.json();
+          renderTrainingData(data.trainingdata);
+        } catch (error) {
+          document.getElementById("training-data-container").innerHTML = `
+                    <div class="training-item">
+                        <h2 class="tid-header">ERROR</h2>
+                        <p>Failed to load blood covenant data: ${error.message}</p>
+                    </div>
+                `;
+        }
+      }
+
+      function renderTrainingData(items) {
+        const container = document.getElementById("training-data-container");
+
+        items.forEach((item) => {
+          const itemDiv = document.createElement("div");
+          itemDiv.className = "training-item";
+
+          let content = `
+                    <div class="tid-header">${item.tid}</div>
+                `;
+
+          if (item.type === "yt") {
+            const videoId = getYouTubeId(item.url);
+            if (videoId) {
+              content += `
+                            <div class="video-wrapper">
+                                <iframe class="video-iframe"
+                                    src="https://www.youtube.com/embed/${videoId}"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        `;
+            }
+          } else if (item.type === "dp") {
+            content += `
+                    <div class="data-dump-description">${item.description}</div>
+                    <a href="${item.url}" class="data-dump-link" target="_blank">
+                        Access Secured Data Dump (${item.tid})
+                    </a>
+                    <div class="data-dump-warning">
+                        Requires pigvin-share authentication [SHARE-${item.tid}]
+                    </div>
+                `;
+          }
+
+          itemDiv.innerHTML = content;
+          container.appendChild(itemDiv);
+        });
+      }
+
+      function getYouTubeId(url) {
+        if (url.includes("/shorts/")) {
+          const parts = url.split("/shorts/");
+          return parts[1].split("?")[0];
+        }
+        const regExp =
+          /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+        const match = url.match(regExp);
+        return match && match[2].length === 11 ? match[2] : null;
+      }
+
+      // Initialize
+      loadTrainingData();
+    </script>
+  </body>
+</html>

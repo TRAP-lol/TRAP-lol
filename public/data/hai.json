@@ -1,0 +1,113 @@
+{
+    "meta": {
+        "totaldumps": 0,
+        "lastmodified": ""
+    },
+    "idformats": {
+        "hidformat": "HAI-[A-Z0-9]{6}"
+    },
+    "defaults": {
+        "haiprefix": "HAI"
+    },
+    "datatype": [
+        {
+            "id": "yt",
+            "type": "YouTube",
+            "format": "video",
+            "url": "https://www.youtube.com/watch?"
+        },
+        {
+            "id": "dp",
+            "type": "DataDump",
+            "format": "file",
+            "url": "https://share.trap.lol/s/",
+            "supersecretdontsharethisisprivateongithubrightpassword": "SHARE-[TID]"
+        }
+    ],
+    "trainingdata": [
+        {
+            "tid": "HAI-CWCHUP",
+            "type": "yt",
+            "description": "",
+            "url": "https://www.youtube.com/watch?v=Iw1vo_4eebg"
+        },
+        {
+            "tid": "HAI-PIDREC",
+            "type": "dp",
+            "description": "Ballerinas and their feet",
+            "url": "https://share.trap.lol/s/oUzAvGl0RUE3zbFN"
+        },
+        {
+            "tid": "HAI-GXPUF8",
+            "type": "yt",
+            "description": "",
+            "url": "https://www.youtube.com/shorts/cA0G1aMY2zQ"
+        },
+        {
+            "tid": "HAI-PR3P1Z",
+            "type": "yt",
+            "description": "",
+            "url": "https://www.youtube.com/watch?v=tGx4sypoPjY"
+        },
+        {
+            "tid": "HAI-TYHPB0",
+            "type": "yt",
+            "description": "",
+            "url": "https://www.youtube.com/watch?v=WOD5uooAznY"
+        },
+        {
+            "tid": "HAI-ZKDQB3",
+            "type": "yt",
+            "description": "",
+            "url": "https://www.youtube.com/watch?v=-WR-FyUQc6I"
+        },
+        {
+            "tid": "HAI-PJ0M6R",
+            "type": "dp",
+            "description": "Weeping angels images",
+            "url": "https://share.trap.lol/s/GsdtbEEp33tUGnup"
+        },
+        {
+            "tid": "HAI-R2RK15",
+            "type": "dp",
+            "description": "Anime Depression",
+            "url": "https://share.trap.lol/s/d5ncH4pNJq79wHyp"
+        },
+        {
+            "tid": "HAI-6MB6SU",
+            "type": "dp",
+            "description": "Jinx images",
+            "url": "https://share.trap.lol/s/hsC9o50s3WWUOG47"
+        },
+        {
+            "tid": "HAI-OLWYHT",
+            "type": "dp",
+            "description": "Anime smoking and depression",
+            "url": "https://share.trap.lol/s/fW4XXBB08rV6zbRA"
+        },
+        {
+            "tid": "HAI-SNEO19",
+            "type": "dp",
+            "description": "Anime Smoking",
+            "url": "https://share.trap.lol/s/HmgXJJqLGS2HQ4So"
+        },
+        {
+            "tid": "HAI-DG3ZPX",
+            "type": "dp",
+            "description": "Depression sketches",
+            "url": "https://share.trap.lol/s/NNHus2zsUf3I3v8J"
+        },
+        {
+            "tid": "HAI-3O6R6W",
+            "type": "dp",
+            "description": "Real people smoking",
+            "url": "https://share.trap.lol/s/sRolRsTf5iSzY8Y9"
+        },
+        {
+            "tid": "HAI-UNREL1",
+            "type": "dp",
+            "description": "Depression sketches",
+            "url": "https://share.trap.lol/s/DY0QhlLoCRvsF7vw"
+        }
+    ]
+}
